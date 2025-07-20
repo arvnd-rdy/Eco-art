@@ -1,0 +1,88 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0" data-aos="zoom-in">
+                <div class="card-header bg-success text-white text-center py-4">
+                    <h2 class="mb-0"><i class="fas fa-palette me-2"></i>Upload Your Eco-Art</h2>
+                    <p class="mb-0">Share your sustainable artwork with the eco-art community!</p>
+                </div>
+                <div class="card-body p-5">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_title" class="form-label"><i class="fas fa-tag me-2"></i>Artwork Title</label>
+                            {{ form.title }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_description" class="form-label"><i class="fas fa-align-left me-2"></i>Artwork Description</label>
+                            {{ form.description }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_price" class="form-label"><i class="fas fa-dollar-sign me-2"></i>Price</label>
+                            {{ form.price }}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_category" class="form-label"><i class="fas fa-palette me-2"></i>Art Type</label>
+                                {{ form.category }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_art_style" class="form-label"><i class="fas fa-brush me-2"></i>Art Style</label>
+                                {{ form.art_style }}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_materials" class="form-label"><i class="fas fa-leaf me-2"></i>Materials Used</label>
+                            {{ form.materials }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_dimensions" class="form-label"><i class="fas fa-ruler me-2"></i>Dimensions</label>
+                            {{ form.dimensions }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_artist_statement" class="form-label"><i class="fas fa-quote-left me-2"></i>Artist Statement</label>
+                            {{ form.artist_statement }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_sustainability_rating" class="form-label"><i class="fas fa-seedling me-2"></i>Sustainability Rating</label>
+                            {{ form.sustainability_rating }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_location" class="form-label"><i class="fas fa-map-marker-alt me-2"></i>Location</label>
+                            {{ form.location }}
+                        </div>
+                        <div class="mb-4">
+                            <label for="id_image" class="form-label"><i class="fas fa-image me-2"></i>Artwork Image</label>
+                            {{ form.image }}
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg w-100">
+                            <i class="fas fa-upload me-2"></i>Upload Artwork
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .form-label {
+        font-weight: 500;
+    }
+    .form-control, .form-select {
+        border-radius: 25px;
+        padding: 12px 20px;
+        border: 2px solid #eee;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #2ecc71;
+        box-shadow: 0 0 0 0.2rem rgba(46,204,113,0.15);
+    }
+</style>
+{% endblock %} 

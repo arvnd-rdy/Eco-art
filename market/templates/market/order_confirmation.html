@@ -1,0 +1,202 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<style>
+.confirmation-bg {
+    background: #f8fafb;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.confirmation-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(39, 174, 96, 0.13);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #27ae60;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: white;
+    font-size: 2rem;
+}
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.order-item:last-child {
+    border-bottom: none;
+}
+.order-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+.info-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.info-row:last-child {
+    margin-bottom: 0;
+}
+.status-badge {
+    background: #e9f7ef;
+    color: #27ae60;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+</style>
+
+<div class="confirmation-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="confirmation-card text-center">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    
+                    <h2 class="fw-bold text-success mb-3">Order Confirmed!</h2>
+                    <p class="text-muted mb-4">Thank you for your purchase. Your order has been successfully placed.</p>
+                    
+                    <div class="status-badge mb-4">
+                        Order #{{ order.order_number }}
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-section">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="fas fa-shipping-fast text-success me-2"></i>
+                                    Shipping Information
+                                </h5>
+                                <div class="info-row">
+                                    <span class="text-muted">Address:</span>
+                                    <span>{{ order.shipping_address }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">City:</span>
+                                    <span>{{ order.shipping_city }}, {{ order.shipping_state }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">ZIP:</span>
+                                    <span>{{ order.shipping_zip_code }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Country:</span>
+                                    <span>{{ order.shipping_country }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Phone:</span>
+                                    <span>{{ order.shipping_phone }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="info-section">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="fas fa-credit-card text-success me-2"></i>
+                                    Payment Information
+                                </h5>
+                                <div class="info-row">
+                                    <span class="text-muted">Method:</span>
+                                    <span>{{ order.get_payment_method_display }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Status:</span>
+                                    <span class="badge bg-warning">{{ order.get_payment_status_display }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Order Date:</span>
+                                    <span>{{ order.created_at|date:"M d, Y" }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Items -->
+                    <div class="mt-4">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-list text-success me-2"></i>
+                            Order Items
+                        </h5>
+                        
+                        {% for item in order.items.all %}
+                        <div class="order-item">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="order-item-img">
+                            <div class="flex-grow-1 text-start">
+                                <h6 class="fw-bold mb-1">{{ item.product.title }}</h6>
+                                <small class="text-muted">by {{ item.product.owner.username }}</small>
+                                <div class="text-success fw-bold">${{ item.price }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Order Totals -->
+                    <div class="info-section mt-4">
+                        <h5 class="fw-bold mb-3">Order Summary</h5>
+                        <div class="info-row">
+                            <span>Subtotal:</span>
+                            <span>${{ order.subtotal }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Shipping:</span>
+                            <span>${{ order.shipping_cost }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Tax:</span>
+                            <span>${{ order.tax }}</span>
+                        </div>
+                        <div class="info-row" style="border-top: 2px solid #27ae60; padding-top: 1rem; font-weight: bold; font-size: 1.2rem;">
+                            <span>Total:</span>
+                            <span class="text-success">${{ order.total }}</span>
+                        </div>
+                    </div>
+                    
+                    {% if order.notes %}
+                    <div class="info-section mt-4">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-sticky-note text-success me-2"></i>
+                            Order Notes
+                        </h5>
+                        <p class="text-muted">{{ order.notes }}</p>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="mt-4">
+                        <a href="{% url 'order_detail' order.id %}" class="btn btn-success me-2">
+                            <i class="fas fa-eye me-2"></i>
+                            View Order Details
+                        </a>
+                        <a href="{% url 'marketplace' %}" class="btn btn-outline-success">
+                            <i class="fas fa-shopping-bag me-2"></i>
+                            Continue Shopping
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

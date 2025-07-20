@@ -1,0 +1,281 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<style>
+.order-detail-bg {
+    background: #f8fafb;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.order-detail-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(39, 174, 96, 0.13);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.info-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.info-row:last-child {
+    margin-bottom: 0;
+}
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.status-pending { background: #fff3cd; color: #856404; }
+.status-processing { background: #cce5ff; color: #004085; }
+.status-shipped { background: #d1ecf1; color: #0c5460; }
+.status-delivered { background: #d4edda; color: #155724; }
+.status-cancelled { background: #f8d7da; color: #721c24; }
+.payment-pending { background: #fff3cd; color: #856404; }
+.payment-paid { background: #d4edda; color: #155724; }
+.payment-failed { background: #f8d7da; color: #721c24; }
+.payment-refunded { background: #e2e3e5; color: #383d41; }
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.order-item:last-child {
+    border-bottom: none;
+}
+.order-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+</style>
+
+<div class="order-detail-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="order-detail-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="fw-bold mb-0">
+                            <i class="fas fa-receipt text-success me-2"></i>
+                            Order Details
+                        </h2>
+                        <a href="{% url 'order_history' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            Back to Orders
+                        </a>
+                    </div>
+                    
+                    <!-- Order Header -->
+                    <div class="info-section">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">Order Information</h5>
+                                <div class="info-row">
+                                    <span class="text-muted">Order Number:</span>
+                                    <span class="fw-bold">{{ order.order_number }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Order Date:</span>
+                                    <span>{{ order.created_at|date:"M d, Y" }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Last Updated:</span>
+                                    <span>{{ order.updated_at|date:"M d, Y" }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3">Status</h5>
+                                <div class="mb-2">
+                                    <span class="status-badge status-{{ order.status }}">
+                                        {{ order.get_status_display }}
+                                    </span>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="status-badge payment-{{ order.payment_status }}">
+                                        {{ order.get_payment_status_display }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shipping Information -->
+                    <div class="info-section">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-shipping-fast text-success me-2"></i>
+                            Shipping Information
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="info-row">
+                                    <span class="text-muted">Address:</span>
+                                    <span>{{ order.shipping_address }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">City:</span>
+                                    <span>{{ order.shipping_city }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">State:</span>
+                                    <span>{{ order.shipping_state }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-row">
+                                    <span class="text-muted">ZIP Code:</span>
+                                    <span>{{ order.shipping_zip_code }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Country:</span>
+                                    <span>{{ order.shipping_country }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Phone:</span>
+                                    <span>{{ order.shipping_phone }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Information -->
+                    <div class="info-section">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-credit-card text-success me-2"></i>
+                            Payment Information
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="info-row">
+                                    <span class="text-muted">Payment Method:</span>
+                                    <span>{{ order.get_payment_method_display }}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="text-muted">Payment Status:</span>
+                                    <span class="status-badge payment-{{ order.payment_status }}">
+                                        {{ order.get_payment_status_display }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                {% if order.paid_at %}
+                                <div class="info-row">
+                                    <span class="text-muted">Paid Date:</span>
+                                    <span>{{ order.paid_at|date:"M d, Y" }}</span>
+                                </div>
+                                {% endif %}
+                                {% if order.shipped_at %}
+                                <div class="info-row">
+                                    <span class="text-muted">Shipped Date:</span>
+                                    <span>{{ order.shipped_at|date:"M d, Y" }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Items -->
+                    <div class="info-section">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-list text-success me-2"></i>
+                            Order Items ({{ order.item_count }})
+                        </h5>
+                        
+                        {% for item in order.items.all %}
+                        <div class="order-item">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="order-item-img">
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">{{ item.product.title }}</h6>
+                                <small class="text-muted">by {{ item.product.owner.username }}</small>
+                                <div class="text-success fw-bold">${{ item.price }}</div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold">Qty: {{ item.quantity }}</div>
+                                <div class="text-success fw-bold">${{ item.total_price }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Order Totals -->
+                    <div class="info-section">
+                        <h5 class="fw-bold mb-3">Order Summary</h5>
+                        <div class="info-row">
+                            <span>Subtotal:</span>
+                            <span>${{ order.subtotal }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Shipping:</span>
+                            <span>${{ order.shipping_cost }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Tax:</span>
+                            <span>${{ order.tax }}</span>
+                        </div>
+                        <div class="info-row" style="border-top: 2px solid #27ae60; padding-top: 1rem; font-weight: bold; font-size: 1.2rem;">
+                            <span>Total:</span>
+                            <span class="text-success">${{ order.total }}</span>
+                        </div>
+                    </div>
+                    
+                    {% if order.notes %}
+                    <div class="info-section">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-sticky-note text-success me-2"></i>
+                            Order Notes
+                        </h5>
+                        <p class="text-muted">{{ order.notes }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="order-detail-card">
+                    <h4 class="fw-bold mb-3">
+                        <i class="fas fa-info-circle text-success me-2"></i>
+                        Quick Actions
+                    </h4>
+                    
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'marketplace' %}" class="btn btn-success">
+                            <i class="fas fa-shopping-bag me-2"></i>
+                            Browse More Art
+                        </a>
+                        <a href="{% url 'order_history' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-history me-2"></i>
+                            View All Orders
+                        </a>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <h5 class="fw-bold mb-3">Need Help?</h5>
+                    <p class="text-muted small mb-3">
+                        If you have any questions about your order, please contact our support team.
+                    </p>
+                    
+                    <div class="d-grid">
+                        <a href="{% url 'contact' %}" class="btn btn-outline-primary">
+                            <i class="fas fa-headset me-2"></i>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

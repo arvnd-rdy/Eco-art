@@ -1,0 +1,243 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<style>
+.notifications-bg {
+    background: #f8fafb;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.notifications-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(39, 174, 96, 0.13);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.notification-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+    position: relative;
+}
+.notification-item:hover {
+    box-shadow: 0 4px 16px rgba(39, 174, 96, 0.1);
+    transform: translateY(-2px);
+}
+.notification-item.unread {
+    background: #f8f9fa;
+    border-left: 4px solid #27ae60;
+}
+.notification-item.read {
+    background: #fff;
+    opacity: 0.8;
+}
+.notification-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+.notification-content {
+    flex-grow: 1;
+}
+.notification-time {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+.notification-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.badge-unread {
+    background: #27ae60;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+.empty-state i {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 1rem;
+}
+</style>
+
+<div class="notifications-bg">
+    <div class="container">
+        <div class="notifications-card">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold mb-0">
+                    <i class="fas fa-bell text-success me-2"></i>
+                    Notifications
+                    {% if unread_count > 0 %}
+                        <span class="badge-unread ms-2">{{ unread_count }} new</span>
+                    {% endif %}
+                </h2>
+                <div class="d-flex gap-2">
+                    {% if notifications %}
+                        <form method="post" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-check-double me-1"></i>
+                                Mark All Read
+                            </button>
+                        </form>
+                    {% endif %}
+                    <a href="{% url 'marketplace' %}" class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-shopping-bag me-1"></i>
+                        Browse Marketplace
+                    </a>
+                </div>
+            </div>
+            
+            {% if notifications %}
+                <form method="post" id="notifications-form">
+                    {% csrf_token %}
+                    {% for notification in notifications %}
+                    <div class="notification-item {% if notification.is_read %}read{% else %}unread{% endif %}" 
+                         data-notification-id="{{ notification.id }}">
+                        <div class="d-flex align-items-start">
+                            <div class="notification-icon {{ notification.color_class }}">
+                                <i class="{{ notification.icon_class }}"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">{{ notification.title }}</h6>
+                                        <p class="text-muted mb-2">{{ notification.message }}</p>
+                                        
+                                        {% if notification.related_product %}
+                                        <div class="mb-2">
+                                            <a href="{% url 'product_detail' notification.related_product.id %}" 
+                                               class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-eye me-1"></i>
+                                                View Product
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        
+                                        {% if notification.related_order %}
+                                        <div class="mb-2">
+                                            <a href="{% url 'order_detail' notification.related_order.id %}" 
+                                               class="btn btn-outline-info btn-sm">
+                                                <i class="fas fa-receipt me-1"></i>
+                                                View Order
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        
+                                        <div class="notification-actions">
+                                            {% if not notification.is_read %}
+                                            <button type="button" class="btn btn-success btn-sm mark-read-btn" 
+                                                    data-notification-id="{{ notification.id }}">
+                                                <i class="fas fa-check me-1"></i>
+                                                Mark Read
+                                            </button>
+                                            {% endif %}
+                                            
+                                            <div class="notification-time">
+                                                <i class="fas fa-clock me-1"></i>
+                                                {{ notification.created_at|timesince }} ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {% if not notification.is_read %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                               name="notification_ids" value="{{ notification.id }}" 
+                                               id="notification_{{ notification.id }}">
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </form>
+                
+                <!-- Pagination could be added here if needed -->
+                
+            {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-bell-slash"></i>
+                    <h4 class="text-muted mb-3">No notifications yet</h4>
+                    <p class="text-muted mb-4">
+                        When you interact with the marketplace, you'll see notifications here.
+                    </p>
+                    <a href="{% url 'marketplace' %}" class="btn btn-success">
+                        <i class="fas fa-shopping-bag me-2"></i>
+                        Start Exploring
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mark individual notification as read
+    document.querySelectorAll('.mark-read-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const notificationId = this.dataset.notificationId;
+            const notificationItem = this.closest('.notification-item');
+            
+            fetch(`/notifications/${notificationId}/mark-read/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    notificationItem.classList.remove('unread');
+                    notificationItem.classList.add('read');
+                    this.remove();
+                    
+                    // Update unread count
+                    const unreadCount = document.querySelectorAll('.notification-item.unread').length;
+                    const badge = document.querySelector('.badge-unread');
+                    if (badge) {
+                        if (unreadCount === 0) {
+                            badge.remove();
+                        } else {
+                            badge.textContent = `${unreadCount} new`;
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error marking notification as read:', error);
+            });
+        });
+    });
+    
+    // Auto-submit form when checkboxes change (for mark all read)
+    document.querySelectorAll('input[name="notification_ids"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const checkedBoxes = document.querySelectorAll('input[name="notification_ids"]:checked');
+            if (checkedBoxes.length > 0) {
+                // You could auto-submit here or just track the selection
+            }
+        });
+    });
+});
+</script>
+{% endblock %} 

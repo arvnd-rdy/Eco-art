@@ -1,0 +1,112 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<div class="hero-section" data-aos="fade-down">
+    <div class="container text-center">
+        <h1 class="display-4 mb-4">Welcome to GreenMarket</h1>
+        <p class="lead mb-4">Your eco-friendly marketplace for sustainable products</p>
+        <form method="get" class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-8 mb-3">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control search-box" placeholder="Search products..." value="{{ q }}">
+                    <button type="submit" class="btn btn-light">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <select name="category" class="form-select" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    {% for value, label in categories %}
+                        <option value="{{ value }}" {% if value == category %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <select name="location" class="form-select" onchange="this.form.submit()">
+                    <option value="">All Locations</option>
+                    {% for loc in locations %}
+                        <option value="{{ loc }}" {% if loc == location %}selected{% endif %}>{{ loc }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    {% if visit_count %}
+    <div class="alert alert-info text-center mb-4" data-aos="fade-up">
+        <i class="fas fa-leaf me-2"></i>
+        You have visited GreenMarket {{ visit_count }} time{{ visit_count|pluralize }} today!
+    </div>
+    {% endif %}
+
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'0' }}0">
+            {% include 'market/_product_card.html' with product=product in_cart=product.in_cart %}
+        </div>
+        {% empty %}
+        <div class="col-12 text-center" data-aos="fade-up">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>No products found matching your criteria.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+    <nav aria-label="Product pagination">
+        <ul class="pagination justify-content-center mt-4">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?{% if q %}q={{ q }}&{% endif %}{% if category %}category={{ category }}&{% endif %}{% if location %}location={{ location }}&{% endif %}page={{ page_obj.previous_page_number }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+            {% endif %}
+
+            {% for num in paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?{% if q %}q={{ q }}&{% endif %}{% if category %}category={{ category }}&{% endif %}{% if location %}location={{ location }}&{% endif %}page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?{% if q %}q={{ q }}&{% endif %}{% if category %}category={{ category }}&{% endif %}{% if location %}location={{ location }}&{% endif %}page={{ page_obj.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Next</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add loading animation for images
+    document.querySelectorAll('.card-img-top').forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+    });
+</script>
+{% endblock %} 

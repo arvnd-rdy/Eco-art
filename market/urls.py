@@ -1,0 +1,33 @@
+from django.urls import path
+from .views import SignUpView, IndexView, ProductListView, ProductUploadView, ProductDetailView, ContactSellerView, ProfileView, AboutView, ContactView, TeamView, ProductDeleteView, SellerProfileView, HomeView, MarketplaceView, add_to_cart, remove_from_cart, CartView, ReviewView, DeleteReviewView, CheckoutView, OrderConfirmationView, OrderHistoryView, OrderDetailView, NotificationsView, MarkNotificationReadView, WishlistView, add_to_wishlist, remove_from_wishlist, move_to_cart, LogoutView
+
+urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
+    path('market/', MarketplaceView.as_view(), name='marketplace'),
+    path('cart/', CartView.as_view(), name='cart'),
+    path('wishlist/', WishlistView.as_view(), name='wishlist'),
+    path('checkout/', CheckoutView.as_view(), name='checkout'),
+    path('orders/', OrderHistoryView.as_view(), name='order_history'),
+    path('order/<int:order_id>/', OrderDetailView.as_view(), name='order_detail'),
+    path('order/<int:order_id>/confirmation/', OrderConfirmationView.as_view(), name='order_confirmation'),
+    path('notifications/', NotificationsView.as_view(), name='notifications'),
+    path('notifications/<int:notification_id>/mark-read/', MarkNotificationReadView.as_view(), name='mark_notification_read'),
+    path('add-to-cart/<int:pk>/', add_to_cart, name='add_to_cart'),
+    path('remove-from-cart/<int:pk>/', remove_from_cart, name='remove_from_cart'),
+    path('add-to-wishlist/<int:pk>/', add_to_wishlist, name='add_to_wishlist'),
+    path('remove-from-wishlist/<int:pk>/', remove_from_wishlist, name='remove_from_wishlist'),
+    path('move-to-cart/<int:pk>/', move_to_cart, name='move_to_cart'),
+    path('signup/', SignUpView.as_view(), name='signup'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('upload/', ProductUploadView.as_view(), name='upload'),
+    path('product/<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
+    path('product/<int:pk>/delete/', ProductDeleteView.as_view(), name='product_delete'),
+    path('product/<int:pk>/contact/', ContactSellerView.as_view(), name='contact_seller'),
+    path('product/<int:pk>/review/', ReviewView.as_view(), name='add_review'),
+    path('product/<int:pk>/review/delete/', DeleteReviewView.as_view(), name='delete_review'),
+    path('profile/', ProfileView.as_view(), name='profile'),
+    path('about/', AboutView.as_view(), name='about'),
+    path('contact/', ContactView.as_view(), name='contact'),
+    path('team/', TeamView.as_view(), name='team'),
+    path('seller/<int:user_id>/', SellerProfileView.as_view(), name='seller_profile'),
+] 
