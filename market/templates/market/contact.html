@@ -282,18 +282,35 @@
           {% csrf_token %}
           
           <div class="form-floating">
-            <input type="text" name="name" class="form-control-modern" placeholder=" " required>
+            {{ form.name }}
             <label class="form-label-modern">Your Name</label>
+            {% if form.name.errors %}
+              <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+            {% endif %}
           </div>
           
           <div class="form-floating">
-            <input type="email" name="email" class="form-control-modern" placeholder=" " required>
+            {{ form.email }}
             <label class="form-label-modern">Email Address</label>
+            {% if form.email.errors %}
+              <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+            {% endif %}
           </div>
           
           <div class="form-floating">
-            <textarea name="message" class="form-control-modern" rows="5" placeholder=" " required style="height: 140px; resize: vertical;"></textarea>
+            {{ form.subject }}
+            <label class="form-label-modern">Subject</label>
+            {% if form.subject.errors %}
+              <div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="form-floating">
+            {{ form.message }}
             <label class="form-label-modern">Your Message</label>
+            {% if form.message.errors %}
+              <div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>
+            {% endif %}
           </div>
           
           <button type="submit" class="btn-send">

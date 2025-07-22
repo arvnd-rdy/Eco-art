@@ -5,6 +5,38 @@ from decimal import Decimal
 
 # Create your models here.
 
+# Additional models to meet 5-member team requirements (10 models total)
+
+class Category(models.Model):
+    """Art category model for better organization"""
+    name = models.CharField(max_length=50, unique=True)
+    display_name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    icon = models.CharField(max_length=50, help_text="FontAwesome icon class", blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name_plural = "Categories"
+        ordering = ['display_name']
+    
+    def __str__(self):
+        return self.display_name
+
+class ArtStyle(models.Model):
+    """Art style model for better categorization"""
+    name = models.CharField(max_length=50, unique=True)
+    display_name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['display_name']
+    
+    def __str__(self):
+        return self.display_name
+
 class Product(models.Model):
     CATEGORY_CHOICES = [
         ('eco_jewelry', '🌿 Eco Jewelry'),

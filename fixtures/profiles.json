@@ -1,0 +1,158 @@
+[
+{
+  "model": "market.profile",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "bio": "Passionate metal sculptor transforming automotive waste into stunning steampunk art. Specializing in recycled metal sculptures that tell stories of environmental consciousness. Each piece is handcrafted from salvaged materials, giving new life to what others discard.",
+    "location": "Portland, Oregon",
+    "profile_picture": "",
+    "phone": "(503) 555-0123",
+    "social_link": "https://instagram.com/sarahgreenwoodmetal"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "bio": "Artisan jewelry maker and textile artist creating beautiful pieces from natural and recycled materials. Using traditional techniques with modern sustainable practices, I craft unique jewelry that honors both craftsmanship and environmental responsibility.",
+    "location": "Austin, Texas",
+    "profile_picture": "",
+    "phone": "(512) 555-0456",
+    "social_link": "https://etsy.com/shop/sustainablecrafts"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "bio": "Contemporary artist exploring the intersection of art and environmental consciousness. My mixed media pieces combine recycled materials with traditional techniques, creating thought-provoking artwork that challenges our relationship with consumption.",
+    "location": "Seattle, Washington",
+    "profile_picture": "",
+    "phone": "(206) 555-0789",
+    "social_link": "https://davidchenart.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "bio": "Sustainable fashion designer and textile artist using organic materials and ethical production practices. Creating stylish, eco-conscious clothing that proves fashion can be both beautiful and environmentally responsible.",
+    "location": "San Francisco, California",
+    "profile_picture": "",
+    "phone": "(415) 555-0321",
+    "social_link": "https://greencreations.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "bio": "Creator of eco-friendly art supplies and natural paints. Using traditional methods with modern sustainable practices, I produce high-quality art materials that are safe for artists and the environment.",
+    "location": "Boulder, Colorado",
+    "profile_picture": "",
+    "phone": "(303) 555-0654",
+    "social_link": "https://naturalpaints.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 6,
+  "fields": {
+    "user": 7,
+    "bio": "Ceramic artist and home decor creator specializing in handcrafted clay sculptures and sustainable home accessories. Each piece is thrown and glazed using eco-friendly practices, bringing natural beauty to your living space.",
+    "location": "Asheville, North Carolina",
+    "profile_picture": "",
+    "phone": "(828) 555-0987",
+    "social_link": "https://claycreations.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 7,
+  "fields": {
+    "user": 8,
+    "bio": "Master woodworker creating stunning sculptures and furniture from reclaimed materials. Giving new purpose to discarded wood, I craft pieces that celebrate the natural beauty and history of salvaged timber.",
+    "location": "Detroit, Michigan",
+    "profile_picture": "",
+    "phone": "(313) 555-0123",
+    "social_link": "https://reclaimedwoodart.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 8,
+  "fields": {
+    "user": 9,
+    "bio": "Digital artist and educator creating eco-conscious digital art and educational content. Using technology to raise awareness about environmental issues while demonstrating how digital art can promote sustainability.",
+    "location": "Portland, Oregon",
+    "profile_picture": "",
+    "phone": "(503) 555-0456",
+    "social_link": "https://digitalecoart.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 9,
+  "fields": {
+    "user": 10,
+    "bio": "Traditional folk artist preserving cultural heritage through sustainable materials and techniques. Creating authentic folk art pieces that honor traditional craftsmanship while using eco-friendly materials.",
+    "location": "Santa Fe, New Mexico",
+    "profile_picture": "",
+    "phone": "(505) 555-0789",
+    "social_link": "https://folkartstudio.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 10,
+  "fields": {
+    "user": 11,
+    "bio": "Installation artist and zero-waste advocate creating large-scale artworks from discarded materials. Transforming waste into wonder, my installations challenge perceptions of beauty and consumption while promoting circular economy principles.",
+    "location": "Brooklyn, New York",
+    "profile_picture": "",
+    "phone": "(718) 555-0321",
+    "social_link": "https://zerowasteart.com"
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 11,
+  "fields": {
+    "user": 13,
+    "bio": null,
+    "location": null,
+    "profile_picture": "",
+    "phone": null,
+    "social_link": null
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 12,
+  "fields": {
+    "user": 12,
+    "bio": null,
+    "location": null,
+    "profile_picture": "",
+    "phone": null,
+    "social_link": null
+  }
+},
+{
+  "model": "market.profile",
+  "pk": 13,
+  "fields": {
+    "user": 14,
+    "bio": null,
+    "location": null,
+    "profile_picture": "",
+    "phone": null,
+    "social_link": null
+  }
+}
+]

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import SignUpView, IndexView, ProductListView, ProductUploadView, ProductDetailView, ContactSellerView, ProfileView, AboutView, ContactView, TeamView, ProductDeleteView, SellerProfileView, HomeView, MarketplaceView, add_to_cart, remove_from_cart, CartView, ReviewView, DeleteReviewView, CheckoutView, OrderConfirmationView, OrderHistoryView, OrderDetailView, NotificationsView, MarkNotificationReadView, WishlistView, add_to_wishlist, remove_from_wishlist, move_to_cart, LogoutView
+from .views import SignUpView, IndexView, ProductListView, ProductUploadView, ProductDetailView, ContactSellerView, ProfileView, AboutView, ContactView, TeamView, ProductDeleteView, SellerProfileView, HomeView, MarketplaceView, add_to_cart, remove_from_cart, CartView, ReviewView, DeleteReviewView, CheckoutView, OrderConfirmationView, OrderHistoryView, OrderDetailView, NotificationsView, MarkNotificationReadView, WishlistView, add_to_wishlist, remove_from_wishlist, move_to_cart, LogoutView, UserFeedbackView, ArtistApplicationView, NewsletterSubscriptionView, ShippingUpdateView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
@@ -10,6 +10,7 @@ urlpatterns = [
     path('orders/', OrderHistoryView.as_view(), name='order_history'),
     path('order/<int:order_id>/', OrderDetailView.as_view(), name='order_detail'),
     path('order/<int:order_id>/confirmation/', OrderConfirmationView.as_view(), name='order_confirmation'),
+    path('order/<int:order_id>/shipping/', ShippingUpdateView.as_view(), name='shipping_update'),
     path('notifications/', NotificationsView.as_view(), name='notifications'),
     path('notifications/<int:notification_id>/mark-read/', MarkNotificationReadView.as_view(), name='mark_notification_read'),
     path('add-to-cart/<int:pk>/', add_to_cart, name='add_to_cart'),
@@ -30,4 +31,8 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('team/', TeamView.as_view(), name='team'),
     path('seller/<int:user_id>/', SellerProfileView.as_view(), name='seller_profile'),
+    # Useful additional features
+    path('feedback/', UserFeedbackView.as_view(), name='user_feedback'),
+    path('artist/apply/', ArtistApplicationView.as_view(), name='artist_application'),
+    path('newsletter/subscribe/', NewsletterSubscriptionView.as_view(), name='newsletter_subscribe'),
 ] 

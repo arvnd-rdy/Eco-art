@@ -502,7 +502,7 @@
             </div>
             <h3 class="filter-title">Filter Artworks</h3>
             <div class="ms-auto">
-                {% if category or location or q %}
+                {% if category or location or q or art_style or min_price or max_price or sustainability_rating %}
                 <a href="{% url 'marketplace' %}" class="clear-filters">
                     <i class="fas fa-times"></i>
                     Clear All
@@ -514,7 +514,7 @@
         <form method="get" id="filterForm">
             <input type="hidden" name="q" value="{{ q }}">
             <div class="row">
-                <div class="col-lg-6 mb-3">
+                <div class="col-lg-4 mb-3">
                     <label class="form-label fw-semibold">Art Category</label>
                     <select name="category" class="form-select modern-select" onchange="document.getElementById('filterForm').submit()">
                         <option value="">🎨 All Art Types</option>
@@ -523,7 +523,16 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-lg-6 mb-3">
+                <div class="col-lg-4 mb-3">
+                    <label class="form-label fw-semibold">Art Style</label>
+                    <select name="art_style" class="form-select modern-select" onchange="document.getElementById('filterForm').submit()">
+                        <option value="">✨ All Styles</option>
+                        {% for value, label in art_styles %}
+                            <option value="{{ value }}" {% if value == art_style %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-lg-4 mb-3">
                     <label class="form-label fw-semibold">Artist Location</label>
                     <select name="location" class="form-select modern-select" onchange="document.getElementById('filterForm').submit()">
                         <option value="">📍 All Locations</option>
@@ -533,16 +542,48 @@
                     </select>
                 </div>
             </div>
+            
+            <!-- Advanced Filters Row -->
+            <div class="row">
+                <div class="col-lg-3 mb-3">
+                    <label class="form-label fw-semibold">Min Price ($)</label>
+                    <input type="number" name="min_price" value="{{ min_price }}" class="form-control modern-select" placeholder="0" min="0" step="0.01" onchange="document.getElementById('filterForm').submit()">
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <label class="form-label fw-semibold">Max Price ($)</label>
+                    <input type="number" name="max_price" value="{{ max_price }}" class="form-control modern-select" placeholder="1000" min="0" step="0.01" onchange="document.getElementById('filterForm').submit()">
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <label class="form-label fw-semibold">Sustainability Rating</label>
+                    <select name="sustainability_rating" class="form-select modern-select" onchange="document.getElementById('filterForm').submit()">
+                        <option value="">🌱 Any Rating</option>
+                        <option value="5" {% if sustainability_rating == '5' %}selected{% endif %}>5 Stars Only</option>
+                        <option value="4" {% if sustainability_rating == '4' %}selected{% endif %}>4+ Stars</option>
+                        <option value="3" {% if sustainability_rating == '3' %}selected{% endif %}>3+ Stars</option>
+                        <option value="2" {% if sustainability_rating == '2' %}selected{% endif %}>2+ Stars</option>
+                        <option value="1" {% if sustainability_rating == '1' %}selected{% endif %}>1+ Stars</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 mb-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="fas fa-search me-2"></i>Apply Filters
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
     
     <!-- Results Header -->
     <div class="results-header fade-in">
         <div class="results-info">
-            {% if q or category or location %}
+            {% if q or category or location or art_style or min_price or max_price or sustainability_rating %}
                 Showing results for {% if q %}"{{ q }}"{% endif %}
                 {% if category %}in {{ category|title }}{% endif %}
+                {% if art_style %}• {{ art_style|title }} style{% endif %}
                 {% if location %}from {{ location }}{% endif %}
+                {% if min_price %}• Min ${{ min_price }}{% endif %}
+                {% if max_price %}• Max ${{ max_price }}{% endif %}
+                {% if sustainability_rating %}• {{ sustainability_rating }}+ stars{% endif %}
             {% else %}
                 Showing all artworks
             {% endif %}

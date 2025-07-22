@@ -1,0 +1,134 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-info text-white text-center py-4">
+                    <h2 class="mb-0"><i class="fas fa-comments me-2"></i>Share Your Feedback</h2>
+                    <p class="mb-0">Help us improve EcoArt Market with your valuable input</p>
+                </div>
+                <div class="card-body p-5">
+                    <div class="alert alert-light border-left-info">
+                        <h6><i class="fas fa-lightbulb me-2"></i>Your Voice Matters</h6>
+                        <p class="mb-0">Whether it's a bug report, feature request, or general feedback, we value your opinion and use it to make our platform better for everyone.</p>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_feedback_type" class="form-label">
+                                        <i class="fas fa-tags me-2"></i>Feedback Type
+                                    </label>
+                                    {{ form.feedback_type }}
+                                    {% if form.feedback_type.errors %}
+                                        <div class="text-danger small mt-1">{{ form.feedback_type.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_overall_rating" class="form-label">
+                                        <i class="fas fa-star me-2"></i>Overall Rating
+                                    </label>
+                                    {{ form.overall_rating }}
+                                    <small class="form-text text-muted">{{ form.overall_rating.help_text }}</small>
+                                    {% if form.overall_rating.errors %}
+                                        <div class="text-danger small mt-1">{{ form.overall_rating.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_subject" class="form-label">
+                                <i class="fas fa-heading me-2"></i>Subject
+                            </label>
+                            {{ form.subject }}
+                            {% if form.subject.errors %}
+                                <div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_message" class="form-label">
+                                <i class="fas fa-comment-alt me-2"></i>Your Feedback
+                            </label>
+                            {{ form.message }}
+                            <small class="form-text text-muted">Please provide as much detail as possible to help us understand and address your feedback.</small>
+                            {% if form.message.errors %}
+                                <div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">
+                                <i class="fas fa-envelope me-2"></i>Email (Optional)
+                            </label>
+                            {{ form.email }}
+                            <small class="form-text text-muted">Provide your email if you'd like us to follow up with you.</small>
+                            {% if form.email.errors %}
+                                <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="form-check">
+                                {{ form.allow_contact }}
+                                <label class="form-check-label" for="id_allow_contact">
+                                    <i class="fas fa-phone me-2"></i>{{ form.allow_contact.help_text }}
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-info btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Feedback
+                            </button>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <a href="{% url 'home' %}" class="text-muted">Back to Home</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Additional Info -->
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card border-success">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bug fa-2x text-success mb-2"></i>
+                            <h6>Bug Reports</h6>
+                            <p class="small text-muted">Found something not working? Let us know!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-primary">
+                        <div class="card-body text-center">
+                            <i class="fas fa-lightbulb fa-2x text-primary mb-2"></i>
+                            <h6>Feature Requests</h6>
+                            <p class="small text-muted">Have an idea for a new feature? Share it!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-warning">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heart fa-2x text-warning mb-2"></i>
+                            <h6>General Feedback</h6>
+                            <p class="small text-muted">Love it or want improvements? Tell us!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
