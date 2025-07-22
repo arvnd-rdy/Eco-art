@@ -250,6 +250,12 @@
                     </h4>
                     
                     <div class="d-grid gap-2">
+                        {% if order.status == 'pending' or order.status == 'processing' %}
+                        <a href="{% url 'shipping_update' order.id %}" class="btn btn-warning">
+                            <i class="fas fa-shipping-fast me-2"></i>
+                            Update Shipping Address
+                        </a>
+                        {% endif %}
                         <a href="{% url 'marketplace' %}" class="btn btn-success">
                             <i class="fas fa-shopping-bag me-2"></i>
                             Browse More Art

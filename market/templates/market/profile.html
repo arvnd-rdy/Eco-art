@@ -448,12 +448,18 @@
         </div>
         
         <div class="ms-auto">
-          {% if not edit_mode %}
-            <a href="?edit=1" class="edit-btn">
-              <i class="fas fa-edit"></i>
-              Edit Profile
-            </a>
-          {% endif %}
+          <div class="d-flex gap-2">
+            {% if not edit_mode %}
+              <a href="?edit=1" class="edit-btn">
+                <i class="fas fa-edit"></i>
+                Edit Profile
+              </a>
+              <a href="{% url 'artist_application' %}" class="edit-btn" style="background: linear-gradient(135deg, #e67e22, #f39c12);">
+                <i class="fas fa-certificate"></i>
+                Apply as Artist
+              </a>
+            {% endif %}
+          </div>
         </div>
       </div>
       

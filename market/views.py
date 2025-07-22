@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.views import View
-from .forms import SignUpForm, ProductUploadForm, ProfileForm, ReviewForm, CheckoutForm
+from .forms import SignUpForm, ProductUploadForm, ProfileForm, ReviewForm, CheckoutForm, ContactForm, UserFeedbackForm, ShippingUpdateForm, ArtistApplicationForm, NewsletterSubscriptionForm
 from django.views.generic import TemplateView, ListView, CreateView, DetailView
-from .models import Product, ContactMessage, Profile, Review, Order, OrderItem, Notification, Wishlist
+from .models import Product, ContactMessage, Profile, Review, Order, OrderItem, Notification, Wishlist, Category, ArtStyle
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 import datetime
@@ -495,11 +495,178 @@ class ProfileView(LoginRequiredMixin, View):
 class AboutView(TemplateView):
     template_name = 'market/about.html'
 
-class ContactView(TemplateView):
-    template_name = 'market/contact.html'
+class ContactView(View):
+    def get(self, request):
+        form = ContactForm()
+        return render(request, 'market/contact.html', {'form': form})
+    
+    def post(self, request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the contact form
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            
+            # Send email (you can configure this based on your email settings)
+            try:
+                send_mail(
+                    subject=f"Contact Form: {subject}",
+                    message=f"From: {name} <{email}>\n\n{message}",
+                    from_email=email,
+                    recipient_list=['admin@ecoartmarket.com'],  # Replace with your admin email
+                    fail_silently=False,
+                )
+                messages.success(request, 'Thank you for your message! We will get back to you soon.')
+            except Exception as e:
+                messages.error(request, 'Sorry, there was an error sending your message. Please try again.')
+            
+            return redirect('contact')
+        
+        return render(request, 'market/contact.html', {'form': form})
 
 class TeamView(TemplateView):
     template_name = 'market/team.html'
+
+# New views for additional forms
+
+class UserFeedbackView(View):
+    def get(self, request):
+        form = UserFeedbackForm()
+        return render(request, 'market/user_feedback.html', {'form': form})
+    
+    def post(self, request):
+        form = UserFeedbackForm(request.POST)
+        if form.is_valid():
+            # Process the feedback
+            feedback_data = {
+                'feedback_type': form.cleaned_data['feedback_type'],
+                'subject': form.cleaned_data['subject'],
+                'message': form.cleaned_data['message'],
+                'overall_rating': form.cleaned_data['overall_rating'],
+                'email': form.cleaned_data.get('email', ''),
+                'allow_contact': form.cleaned_data.get('allow_contact', False),
+                'user': request.user if request.user.is_authenticated else None,
+            }
+            
+            # In a real application, you would save this to a Feedback model
+            # For now, we'll just create a notification if user is logged in
+            if request.user.is_authenticated:
+                create_notification(
+                    user=request.user,
+                    notification_type='system',
+                    title='Feedback Submitted',
+                    message=f'Thank you for your {form.cleaned_data["feedback_type"]} feedback! We appreciate your input.'
+                )
+            
+            messages.success(request, 'Thank you for your feedback! We will review it and get back to you if needed.')
+            return redirect('user_feedback')
+        
+        return render(request, 'market/user_feedback.html', {'form': form})
+
+class ArtistApplicationView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = ArtistApplicationForm()
+        return render(request, 'market/artist_application.html', {'form': form})
+    
+    def post(self, request):
+        form = ArtistApplicationForm(request.POST)
+        if form.is_valid():
+            # Process artist application
+            application_data = {
+                'user': request.user,
+                'full_name': form.cleaned_data['full_name'],
+                'artist_statement': form.cleaned_data['artist_statement'],
+                'portfolio_url': form.cleaned_data.get('portfolio_url', ''),
+                'years_of_experience': form.cleaned_data['years_of_experience'],
+                'specialization': form.cleaned_data['specialization'],
+                'certifications': form.cleaned_data.get('certifications', ''),
+            }
+            
+            # You could save this to a database model or send email
+            # For now, we'll just create a notification
+            create_notification(
+                user=request.user,
+                notification_type='system',
+                title='Artist Application Submitted',
+                message='Your artist application has been submitted and is under review. We will contact you within 5-7 business days.'
+            )
+            
+            messages.success(request, 'Your artist application has been submitted successfully! We will review it and get back to you soon.')
+            return redirect('profile')
+        
+        return render(request, 'market/artist_application.html', {'form': form})
+
+class NewsletterSubscriptionView(View):
+    def post(self, request):
+        form = NewsletterSubscriptionForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            interests = form.cleaned_data.get('interests', [])
+            frequency = form.cleaned_data['frequency']
+            
+            # Here you would typically save to a newsletter model or external service
+            # For demo purposes, we'll create a notification if user is logged in
+            if request.user.is_authenticated:
+                create_notification(
+                    user=request.user,
+                    notification_type='system',
+                    title='Newsletter Subscription Confirmed',
+                    message=f'You have successfully subscribed to our {frequency} newsletter!'
+                )
+            
+            messages.success(request, f'Thank you for subscribing to our {frequency} newsletter!')
+            return JsonResponse({'success': True})
+        
+        return JsonResponse({'success': False, 'errors': form.errors})
+
+class ShippingUpdateView(LoginRequiredMixin, View):
+    def get(self, request, order_id):
+        order = get_object_or_404(Order, id=order_id, user=request.user)
+        if order.status not in ['pending', 'processing']:
+            messages.error(request, 'This order cannot be modified.')
+            return redirect('order_detail', order_id=order_id)
+        
+        initial_data = {
+            'shipping_address': order.shipping_address,
+            'shipping_city': order.shipping_city,
+            'shipping_state': order.shipping_state,
+            'shipping_zip_code': order.shipping_zip_code,
+            'shipping_country': order.shipping_country,
+        }
+        form = ShippingUpdateForm(initial=initial_data)
+        return render(request, 'market/shipping_update.html', {'form': form, 'order': order})
+    
+    def post(self, request, order_id):
+        order = get_object_or_404(Order, id=order_id, user=request.user)
+        if order.status not in ['pending', 'processing']:
+            messages.error(request, 'This order cannot be modified.')
+            return redirect('order_detail', order_id=order_id)
+        
+        form = ShippingUpdateForm(request.POST)
+        if form.is_valid():
+            # Update order shipping information
+            order.shipping_address = form.cleaned_data['shipping_address']
+            order.shipping_city = form.cleaned_data['shipping_city']
+            order.shipping_state = form.cleaned_data['shipping_state']
+            order.shipping_zip_code = form.cleaned_data['shipping_zip_code']
+            order.shipping_country = form.cleaned_data['shipping_country']
+            order.save()
+            
+            # Create notification
+            create_notification(
+                user=request.user,
+                notification_type='order_status_changed',
+                title='Shipping Address Updated',
+                message=f'Shipping address for order #{order.order_number} has been updated successfully.',
+                related_order=order
+            )
+            
+            messages.success(request, 'Shipping address updated successfully!')
+            return redirect('order_detail', order_id=order_id)
+        
+        return render(request, 'market/shipping_update.html', {'form': form, 'order': order})
 
 class SellerProfileView(LoginRequiredMixin, View):
     def get(self, request, user_id):
@@ -542,6 +709,64 @@ class HomeView(View):
 
 class MarketplaceView(ProductListView):
     template_name = 'market/marketplace.html'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset().order_by('-created_at')
+        
+        # Get search parameters
+        q = self.request.GET.get('q', '').strip()
+        category = self.request.GET.get('category', '').strip()
+        location = self.request.GET.get('location', '').strip()
+        art_style = self.request.GET.get('art_style', '').strip()
+        min_price = self.request.GET.get('min_price', '').strip()
+        max_price = self.request.GET.get('max_price', '').strip()
+        sustainability_rating = self.request.GET.get('sustainability_rating', '').strip()
+        
+        # Apply filters
+        if q:
+            queryset = queryset.filter(
+                Q(title__icontains=q) | 
+                Q(description__icontains=q) |
+                Q(materials__icontains=q) |
+                Q(owner__username__icontains=q)
+            )
+        if category:
+            queryset = queryset.filter(category=category)
+        if location:
+            queryset = queryset.filter(location__icontains=location)
+        if art_style:
+            queryset = queryset.filter(art_style=art_style)
+        if min_price:
+            try:
+                queryset = queryset.filter(price__gte=float(min_price))
+            except ValueError:
+                pass
+        if max_price:
+            try:
+                queryset = queryset.filter(price__lte=float(max_price))
+            except ValueError:
+                pass
+        if sustainability_rating:
+            try:
+                queryset = queryset.filter(sustainability_rating__gte=int(sustainability_rating))
+            except ValueError:
+                pass
+                
+        return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # Add search parameters to context
+        context['art_style'] = self.request.GET.get('art_style', '')
+        context['min_price'] = self.request.GET.get('min_price', '')
+        context['max_price'] = self.request.GET.get('max_price', '')
+        context['sustainability_rating'] = self.request.GET.get('sustainability_rating', '')
+        
+        # Add choices for dropdowns
+        context['art_styles'] = Product.ART_STYLE_CHOICES
+        
+        return context
 
 class CartView(View):
     def get(self, request):

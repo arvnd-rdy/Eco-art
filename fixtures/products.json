@@ -1,0 +1,1275 @@
+[
+{
+  "model": "market.product",
+  "pk": 1,
+  "fields": {
+    "title": "Natural Upcycled Eco Product 16",
+    "description": "Natural natural upcycled eco product 16 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "114.00",
+    "category": "natural_sustainable",
+    "art_style": "mixed_media",
+    "materials": "Upcycled materials, natural finishes, eco-friendly adhesives",
+    "dimensions": "Set of 6 colors",
+    "image": "products/upcycled-eco-product-16.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.586Z",
+    "artist_statement": "Celebrating the circular economy, this artwork gives new purpose to materials that would otherwise be discarded.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 2,
+  "fields": {
+    "title": "Natural Upcycled Eco Product 17",
+    "description": "Natural natural upcycled eco product 17 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "265.00",
+    "category": "natural_sustainable",
+    "art_style": "mixed_media",
+    "materials": "Zero-waste materials, natural fibers, sustainable practices",
+    "dimensions": "Custom dimensions",
+    "image": "products/upcycled-eco-product-17.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.624Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 3,
+  "fields": {
+    "title": "Natural Upcycled Eco Product 18",
+    "description": "Natural natural upcycled eco product 18 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "128.00",
+    "category": "natural_sustainable",
+    "art_style": "mixed_media",
+    "materials": "Upcycled materials, natural finishes, eco-friendly adhesives",
+    "dimensions": "Various sizes",
+    "image": "products/upcycled-eco-product-18.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.642Z",
+    "artist_statement": "Transforming waste into wonder, this creation challenges our perception of beauty and sustainability.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 4,
+  "fields": {
+    "title": "Natural Upcycled Eco Product 19",
+    "description": "Natural natural upcycled eco product 19 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "144.00",
+    "category": "natural_sustainable",
+    "art_style": "sculptural",
+    "materials": "Recycled components, sustainable binders, natural elements",
+    "dimensions": "Custom dimensions",
+    "image": "products/upcycled-eco-product-19.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.656Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 5,
+  "fields": {
+    "title": "Natural Upcycled Eco Product 20",
+    "description": "Natural natural upcycled eco product 20 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "205.00",
+    "category": "natural_sustainable",
+    "art_style": "sculptural",
+    "materials": "Zero-waste materials, natural fibers, sustainable practices",
+    "dimensions": "Custom dimensions",
+    "image": "products/upcycled-eco-product-20.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.672Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 6,
+  "fields": {
+    "title": "Natural Zero Waste Eco Product 26",
+    "description": "Natural natural zero waste eco product 26 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "119.00",
+    "category": "natural_sustainable",
+    "art_style": "sculptural",
+    "materials": "Recycled components, sustainable binders, natural elements",
+    "dimensions": "Set of 6 colors",
+    "image": "products/zero-waste-eco-product-26.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.685Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 7,
+  "fields": {
+    "title": "Natural Zero Waste Eco Product 27",
+    "description": "Natural natural zero waste eco product 27 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "138.00",
+    "category": "natural_sustainable",
+    "art_style": "sculptural",
+    "materials": "Recycled components, sustainable binders, natural elements",
+    "dimensions": "Custom dimensions",
+    "image": "products/zero-waste-eco-product-27.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.699Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 8,
+  "fields": {
+    "title": "Natural Zero Waste Eco Product 28",
+    "description": "Natural natural zero waste eco product 28 by Aisha Patel created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "298.00",
+    "category": "natural_sustainable",
+    "art_style": "sculptural",
+    "materials": "Zero-waste materials, natural fibers, sustainable practices",
+    "dimensions": "Various sizes",
+    "image": "products/zero-waste-eco-product-28.webp",
+    "location": "Brooklyn, New York",
+    "owner": 11,
+    "created_at": "2025-07-19T22:41:36.713Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 9,
+  "fields": {
+    "title": "Natural Natural Eco Paints Collection",
+    "description": "Natural natural natural eco paints collection by Alex Rivera created with organic materials and sustainable processes. This piece celebrates the harmony between art and nature.",
+    "price": "123.00",
+    "category": "natural_sustainable",
+    "art_style": "functional",
+    "materials": "Upcycled materials, natural finishes, eco-friendly adhesives",
+    "dimensions": "Various sizes",
+    "image": "products/natural-eco-paints-collection.webp",
+    "location": "Boulder, Colorado",
+    "owner": 6,
+    "created_at": "2025-07-19T22:41:36.728Z",
+    "artist_statement": "Transforming waste into wonder, this creation challenges our perception of beauty and sustainability.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 10,
+  "fields": {
+    "title": "Artisan Artisan Handmade Item 01",
+    "description": "Artisan-crafted artisan artisan handmade item 01 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "81.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Sustainable fibers, natural dyes, traditional techniques",
+    "dimensions": "18\" x 18\"",
+    "image": "products/artisan-handmade-item-01.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.742Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 11,
+  "fields": {
+    "title": "Artisan Artisan Handmade Item 02",
+    "description": "Artisan-crafted artisan artisan handmade item 02 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "66.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Organic cotton, natural indigo dye, sustainable mordants",
+    "dimensions": "Variable dimensions",
+    "image": "products/artisan-handmade-item-02.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.756Z",
+    "artist_statement": "Transforming waste into wonder, this creation challenges our perception of beauty and sustainability.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 12,
+  "fields": {
+    "title": "Artisan Artisan Handmade Item 03",
+    "description": "Artisan-crafted artisan artisan handmade item 03 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "159.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Sustainable fibers, natural dyes, traditional techniques",
+    "dimensions": "Variable dimensions",
+    "image": "products/artisan-handmade-item-03.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.772Z",
+    "artist_statement": "Giving new life to discarded materials, this artwork celebrates the beauty of sustainable practices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 13,
+  "fields": {
+    "title": "Artisan Artisan Handmade Item 04",
+    "description": "Artisan-crafted artisan artisan handmade item 04 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "191.00",
+    "category": "handmade_artisan",
+    "art_style": "traditional",
+    "materials": "Handmade paper, natural pigments, eco-friendly binders",
+    "dimensions": "24\" x 24\"",
+    "image": "products/artisan-handmade-item-04.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.785Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 14,
+  "fields": {
+    "title": "Artisan Artisan Handmade Item 05",
+    "description": "Artisan-crafted artisan artisan handmade item 05 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "105.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Recycled fabrics, natural dyes, sustainable thread",
+    "dimensions": "24\" x 24\"",
+    "image": "products/artisan-handmade-item-05.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.801Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 15,
+  "fields": {
+    "title": "Artisan Handmade Craft Item 01",
+    "description": "Artisan-crafted artisan handmade craft item 01 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "45.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Recycled fabrics, natural dyes, sustainable thread",
+    "dimensions": "24\" x 24\"",
+    "image": "products/handmade-craft-item-01.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.814Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 16,
+  "fields": {
+    "title": "Artisan Handmade Craft Item 02",
+    "description": "Artisan-crafted artisan handmade craft item 02 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "81.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Organic cotton, natural indigo dye, sustainable mordants",
+    "dimensions": "24\" x 24\"",
+    "image": "products/handmade-craft-item-02.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.828Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 17,
+  "fields": {
+    "title": "Artisan Handmade Craft Item 03",
+    "description": "Artisan-crafted artisan handmade craft item 03 by Carlos Mendez using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "145.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Handmade paper, natural pigments, eco-friendly binders",
+    "dimensions": "18\" x 18\"",
+    "image": "products/handmade-craft-item-03.webp",
+    "location": "Santa Fe, New Mexico",
+    "owner": 10,
+    "created_at": "2025-07-19T22:41:36.839Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 18,
+  "fields": {
+    "title": "Eco Eco Wall Art 01",
+    "description": "Contemporary eco eco wall art 01 by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "200.00",
+    "category": "wall_art",
+    "art_style": "collage",
+    "materials": "Natural pigments, sustainable canvas, eco-friendly varnish",
+    "dimensions": "24\" x 18\"",
+    "image": "products/eco-wall-art-01.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.854Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 19,
+  "fields": {
+    "title": "Eco Eco Wall Art 02",
+    "description": "Contemporary eco eco wall art 02 by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "551.00",
+    "category": "wall_art",
+    "art_style": "contemporary",
+    "materials": "Natural pigments, sustainable canvas, eco-friendly varnish",
+    "dimensions": "48\" x 36\"",
+    "image": "products/eco-wall-art-02.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.866Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 20,
+  "fields": {
+    "title": "Eco Eco Wall Art 03",
+    "description": "Contemporary eco eco wall art 03 by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "255.00",
+    "category": "wall_art",
+    "art_style": "contemporary",
+    "materials": "Mixed media, recycled materials, sustainable adhesives",
+    "dimensions": "36\" x 24\"",
+    "image": "products/eco-wall-art-03.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.882Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 21,
+  "fields": {
+    "title": "Eco Eco Wall Art 04",
+    "description": "Contemporary eco eco wall art 04 by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "506.00",
+    "category": "wall_art",
+    "art_style": "collage",
+    "materials": "Eco-friendly acrylic paints, organic cotton canvas, reclaimed wood frame",
+    "dimensions": "48\" x 36\"",
+    "image": "products/eco-wall-art-04.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.896Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 22,
+  "fields": {
+    "title": "Eco Eco Wall Art 05",
+    "description": "Contemporary eco eco wall art 05 by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "271.00",
+    "category": "wall_art",
+    "art_style": "collage",
+    "materials": "Natural pigments, sustainable canvas, eco-friendly varnish",
+    "dimensions": "24\" x 18\"",
+    "image": "products/eco-wall-art-05.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.908Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 23,
+  "fields": {
+    "title": "Eco Sustainable Fine Art Piece",
+    "description": "Contemporary eco sustainable fine art piece by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "307.00",
+    "category": "wall_art",
+    "art_style": "contemporary",
+    "materials": "Eco-friendly acrylic paints, organic cotton canvas, reclaimed wood frame",
+    "dimensions": "48\" x 36\"",
+    "image": "products/sustainable-fine-art-piece.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.924Z",
+    "artist_statement": "Transforming waste into wonder, this creation challenges our perception of beauty and sustainability.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 24,
+  "fields": {
+    "title": "Eco Three Waves Collage Art Marissa Schiesser",
+    "description": "Contemporary eco three waves collage art marissa schiesser by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "391.00",
+    "category": "wall_art",
+    "art_style": "contemporary",
+    "materials": "Recycled paper, natural dyes, sustainable glue, reclaimed wood frame",
+    "dimensions": "48\" x 36\"",
+    "image": "products/three-waves-collage-art-marissa-schiesser.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.939Z",
+    "artist_statement": "Giving new life to discarded materials, this artwork celebrates the beauty of sustainable practices.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 25,
+  "fields": {
+    "title": "Eco Universal Vulnerability Art Leon Zernitsky",
+    "description": "Contemporary eco universal vulnerability art leon zernitsky by David Chen that combines artistic expression with environmental consciousness. Perfect for adding sustainable beauty to any space.",
+    "price": "317.00",
+    "category": "wall_art",
+    "art_style": "collage",
+    "materials": "Mixed media, recycled materials, sustainable adhesives",
+    "dimensions": "36\" x 24\"",
+    "image": "products/universal-vulnerability-art-leon-zernitsky.webp",
+    "location": "Seattle, Washington",
+    "owner": 4,
+    "created_at": "2025-07-19T22:41:36.953Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 26,
+  "fields": {
+    "title": "Sustainable Sustainable Clothing Collection 01",
+    "description": "Stylish sustainable sustainable clothing collection 01 by Emma Thompson made from sustainable materials and ethical production practices. Fashion that cares for the planet.",
+    "price": "271.00",
+    "category": "sustainable_fashion",
+    "art_style": "wearable",
+    "materials": "Sustainable textiles, natural dyes, ethical production",
+    "dimensions": "One size fits most",
+    "image": "products/sustainable-clothing-collection-01.webp",
+    "location": "San Francisco, California",
+    "owner": 5,
+    "created_at": "2025-07-19T22:41:36.963Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 27,
+  "fields": {
+    "title": "Sustainable Sustainable Clothing Collection 02",
+    "description": "Stylish sustainable sustainable clothing collection 02 by Emma Thompson made from sustainable materials and ethical production practices. Fashion that cares for the planet.",
+    "price": "262.00",
+    "category": "sustainable_fashion",
+    "art_style": "wearable",
+    "materials": "Recycled fabrics, natural fibers, eco-friendly thread",
+    "dimensions": "Various sizes available",
+    "image": "products/sustainable-clothing-collection-02.webp",
+    "location": "San Francisco, California",
+    "owner": 5,
+    "created_at": "2025-07-19T22:41:36.980Z",
+    "artist_statement": "Giving new life to discarded materials, this artwork celebrates the beauty of sustainable practices.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 28,
+  "fields": {
+    "title": "Sustainable Sustainable Clothing Collection 03",
+    "description": "Stylish sustainable sustainable clothing collection 03 by Emma Thompson made from sustainable materials and ethical production practices. Fashion that cares for the planet.",
+    "price": "193.00",
+    "category": "sustainable_fashion",
+    "art_style": "wearable",
+    "materials": "Sustainable textiles, natural dyes, ethical production",
+    "dimensions": "One size fits most",
+    "image": "products/sustainable-clothing-collection-03.webp",
+    "location": "San Francisco, California",
+    "owner": 5,
+    "created_at": "2025-07-19T22:41:36.994Z",
+    "artist_statement": "Giving new life to discarded materials, this artwork celebrates the beauty of sustainable practices.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 29,
+  "fields": {
+    "title": "Sustainable Sustainable Clothing Collection 04",
+    "description": "Stylish sustainable sustainable clothing collection 04 by Emma Thompson made from sustainable materials and ethical production practices. Fashion that cares for the planet.",
+    "price": "110.00",
+    "category": "sustainable_fashion",
+    "art_style": "wearable",
+    "materials": "100% organic cotton, natural dyes, sustainable buttons",
+    "dimensions": "One size fits most",
+    "image": "products/sustainable-clothing-collection-04.webp",
+    "location": "San Francisco, California",
+    "owner": 5,
+    "created_at": "2025-07-19T22:41:37.007Z",
+    "artist_statement": "Celebrating the circular economy, this artwork gives new purpose to materials that would otherwise be discarded.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 30,
+  "fields": {
+    "title": "Sustainable Sustainable Clothing Collection 05",
+    "description": "Stylish sustainable sustainable clothing collection 05 by Emma Thompson made from sustainable materials and ethical production practices. Fashion that cares for the planet.",
+    "price": "135.00",
+    "category": "sustainable_fashion",
+    "art_style": "wearable",
+    "materials": "Recycled fabrics, natural fibers, eco-friendly thread",
+    "dimensions": "Custom sizing",
+    "image": "products/sustainable-clothing-collection-05.webp",
+    "location": "San Francisco, California",
+    "owner": 5,
+    "created_at": "2025-07-19T22:41:37.025Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 31,
+  "fields": {
+    "title": "Handmade Eco Home Decor 06",
+    "description": "Handcrafted handmade eco home decor 06 by Lisa Park made with natural materials and sustainable practices. Each piece brings eco-friendly elegance to your home.",
+    "price": "249.00",
+    "category": "home_decor",
+    "art_style": "functional",
+    "materials": "Reclaimed wood, natural finishes, sustainable hardware",
+    "dimensions": "12\" x 8\" x 6\"",
+    "image": "products/eco-home-decor-06.webp",
+    "location": "Asheville, North Carolina",
+    "owner": 7,
+    "created_at": "2025-07-19T22:41:37.042Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 32,
+  "fields": {
+    "title": "Handmade Eco Home Decor 07",
+    "description": "Handcrafted handmade eco home decor 07 by Lisa Park made with natural materials and sustainable practices. Each piece brings eco-friendly elegance to your home.",
+    "price": "146.00",
+    "category": "home_decor",
+    "art_style": "sculptural",
+    "materials": "Sustainable ceramics, natural glazes, organic materials",
+    "dimensions": "Variable size",
+    "image": "products/eco-home-decor-07.webp",
+    "location": "Asheville, North Carolina",
+    "owner": 7,
+    "created_at": "2025-07-19T22:41:37.053Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 33,
+  "fields": {
+    "title": "Handmade Eco Home Decor 08",
+    "description": "Handcrafted handmade eco home decor 08 by Lisa Park made with natural materials and sustainable practices. Each piece brings eco-friendly elegance to your home.",
+    "price": "276.00",
+    "category": "home_decor",
+    "art_style": "sculptural",
+    "materials": "Sustainable ceramics, natural glazes, organic materials",
+    "dimensions": "Variable size",
+    "image": "products/eco-home-decor-08.webp",
+    "location": "Asheville, North Carolina",
+    "owner": 7,
+    "created_at": "2025-07-19T22:41:37.064Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 34,
+  "fields": {
+    "title": "Handmade Eco Home Decor 09",
+    "description": "Handcrafted handmade eco home decor 09 by Lisa Park made with natural materials and sustainable practices. Each piece brings eco-friendly elegance to your home.",
+    "price": "53.00",
+    "category": "home_decor",
+    "art_style": "sculptural",
+    "materials": "Natural clay, eco-friendly glazes, sustainable firing process",
+    "dimensions": "Variable size",
+    "image": "products/eco-home-decor-09.webp",
+    "location": "Asheville, North Carolina",
+    "owner": 7,
+    "created_at": "2025-07-19T22:41:37.079Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 35,
+  "fields": {
+    "title": "Handmade Eco Home Decor 10",
+    "description": "Handcrafted handmade eco home decor 10 by Lisa Park made with natural materials and sustainable practices. Each piece brings eco-friendly elegance to your home.",
+    "price": "279.00",
+    "category": "home_decor",
+    "art_style": "functional",
+    "materials": "Natural clay, eco-friendly glazes, sustainable firing process",
+    "dimensions": "12\" x 8\" x 6\"",
+    "image": "products/eco-home-decor-10.webp",
+    "location": "Asheville, North Carolina",
+    "owner": 7,
+    "created_at": "2025-07-19T22:41:37.092Z",
+    "artist_statement": "Celebrating the circular economy, this artwork gives new purpose to materials that would otherwise be discarded.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 36,
+  "fields": {
+    "title": "Handmade Handmade Clay Towers Sculpture",
+    "description": "Handcrafted handmade handmade clay towers sculpture by Lisa Park made with natural materials and sustainable practices. Each piece brings eco-friendly elegance to your home.",
+    "price": "202.00",
+    "category": "home_decor",
+    "art_style": "sculptural",
+    "materials": "Recycled materials, natural fibers, eco-friendly adhesives",
+    "dimensions": "8\" x 6\" x 4\"",
+    "image": "products/handmade-clay-towers-sculpture.webp",
+    "location": "Asheville, North Carolina",
+    "owner": 7,
+    "created_at": "2025-07-19T22:41:37.105Z",
+    "artist_statement": "Transforming waste into wonder, this creation challenges our perception of beauty and sustainability.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 37,
+  "fields": {
+    "title": "Artisan Handmade Eco Product 11",
+    "description": "Artisan-crafted artisan handmade eco product 11 by Marcus Johnson using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "274.00",
+    "category": "handmade_artisan",
+    "art_style": "sculptural",
+    "materials": "Salvaged timber, eco-friendly adhesives, natural oils",
+    "dimensions": "Variable dimensions",
+    "image": "products/handmade-eco-product-11.webp",
+    "location": "Detroit, Michigan",
+    "owner": 8,
+    "created_at": "2025-07-19T22:41:37.118Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 38,
+  "fields": {
+    "title": "Artisan Handmade Eco Product 12",
+    "description": "Artisan-crafted artisan handmade eco product 12 by Marcus Johnson using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "366.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Salvaged timber, eco-friendly adhesives, natural oils",
+    "dimensions": "24\" x 24\"",
+    "image": "products/handmade-eco-product-12.webp",
+    "location": "Detroit, Michigan",
+    "owner": 8,
+    "created_at": "2025-07-19T22:41:37.130Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 39,
+  "fields": {
+    "title": "Artisan Handmade Eco Product 13",
+    "description": "Artisan-crafted artisan handmade eco product 13 by Marcus Johnson using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "290.00",
+    "category": "handmade_artisan",
+    "art_style": "sculptural",
+    "materials": "Upcycled lumber, traditional techniques, eco-friendly finishes",
+    "dimensions": "24\" x 24\"",
+    "image": "products/handmade-eco-product-13.webp",
+    "location": "Detroit, Michigan",
+    "owner": 8,
+    "created_at": "2025-07-19T22:41:37.144Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 40,
+  "fields": {
+    "title": "Artisan Handmade Eco Product 14",
+    "description": "Artisan-crafted artisan handmade eco product 14 by Marcus Johnson using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "354.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Upcycled lumber, traditional techniques, eco-friendly finishes",
+    "dimensions": "Variable dimensions",
+    "image": "products/handmade-eco-product-14.webp",
+    "location": "Detroit, Michigan",
+    "owner": 8,
+    "created_at": "2025-07-19T22:41:37.157Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 41,
+  "fields": {
+    "title": "Artisan Handmade Eco Product 15",
+    "description": "Artisan-crafted artisan handmade eco product 15 by Marcus Johnson using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "126.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Recycled wood, sustainable joinery, natural stains",
+    "dimensions": "Variable dimensions",
+    "image": "products/handmade-eco-product-15.webp",
+    "location": "Detroit, Michigan",
+    "owner": 8,
+    "created_at": "2025-07-19T22:41:37.171Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 42,
+  "fields": {
+    "title": "Artisan Reclaimed Wood Jewelry 1024x585",
+    "description": "Artisan-crafted artisan reclaimed wood jewelry 1024x585 by Marcus Johnson using traditional techniques and sustainable materials. A testament to both craftsmanship and environmental responsibility.",
+    "price": "394.00",
+    "category": "handmade_artisan",
+    "art_style": "functional",
+    "materials": "Reclaimed wood, natural finishes, sustainable hardware",
+    "dimensions": "Variable dimensions",
+    "image": "products/reclaimed-wood-jewelry-1024x585.webp",
+    "location": "Detroit, Michigan",
+    "owner": 8,
+    "created_at": "2025-07-19T22:41:37.182Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 43,
+  "fields": {
+    "title": "Sustainable 12+brands+creating+eco Friendly+jewelry+that’ll+leave+you+dazzled",
+    "description": "Beautiful sustainable 12+brands+creating+eco friendly+jewelry+that’ll+leave+you+dazzled crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "134.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Sustainable bamboo, organic cotton, natural dyes",
+    "dimensions": "18\" necklace length",
+    "image": "products/12BrandsCreatingEco-FriendlyJewelryThatllLeaveYouDazzled.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.199Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 44,
+  "fields": {
+    "title": "Sustainable 12+eco Friendly+jewelry+(3)",
+    "description": "Beautiful sustainable 12+eco friendly+jewelry+(3) crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "67.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Sustainable bamboo, organic cotton, natural dyes",
+    "dimensions": "18\" necklace length",
+    "image": "products/12ECO-FRIENDLYJEWELRY3.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.210Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 45,
+  "fields": {
+    "title": "Sustainable 12+eco Friendly+jewelry+(4)",
+    "description": "Beautiful sustainable 12+eco friendly+jewelry+(4) crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "59.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Recycled silver, sustainable bamboo, natural hemp cord",
+    "dimensions": "18\" necklace length",
+    "image": "products/12ECO-FRIENDLYJEWELRY4.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.224Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 46,
+  "fields": {
+    "title": "Sustainable 12+eco Friendly+jewelry+(5)",
+    "description": "Beautiful sustainable 12+eco friendly+jewelry+(5) crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "63.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Reclaimed wood, natural leather, brass hardware",
+    "dimensions": "Adjustable ring size",
+    "image": "products/12ECO-FRIENDLYJEWELRY5.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.230Z",
+    "artist_statement": "Giving new life to discarded materials, this artwork celebrates the beauty of sustainable practices.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 47,
+  "fields": {
+    "title": "Sustainable 12+eco Friendly+jewelry",
+    "description": "Beautiful sustainable 12+eco friendly+jewelry crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "72.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Recycled silver, sustainable bamboo, natural hemp cord",
+    "dimensions": "18\" necklace length",
+    "image": "products/12ECO-FRIENDLYJEWELRY.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.249Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 48,
+  "fields": {
+    "title": "Sustainable Cled Eco Conscious Sustainable Jewelry Bracelet Wear Canyon Clear (1)",
+    "description": "Beautiful sustainable cled eco conscious sustainable jewelry bracelet wear canyon clear (1) crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "48.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Reclaimed wood, natural leather, brass hardware",
+    "dimensions": "18\" necklace length",
+    "image": "products/CLED-eco-conscious-sustainable-jewelry-bracelet-wear-canyon-clear_1.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.262Z",
+    "artist_statement": "This piece represents the harmony between nature and human creativity, using materials that give back to the earth.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 49,
+  "fields": {
+    "title": "Sustainable Cled Eco Conscious Sustainable Jewelry Bracelet Wear Canyon Clear",
+    "description": "Beautiful sustainable cled eco conscious sustainable jewelry bracelet wear canyon clear crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "42.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Recycled metals, natural stones, eco-friendly finishes",
+    "dimensions": "Adjustable ring size",
+    "image": "products/CLED-eco-conscious-sustainable-jewelry-bracelet-wear-canyon-clear.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.273Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 50,
+  "fields": {
+    "title": "Sustainable Cled Jewelry 14 Adf90e29 5a0a 45ed Bbd7 3e871fb935da",
+    "description": "Beautiful sustainable cled jewelry 14 adf90e29 5a0a 45ed bbd7 3e871fb935da crafted by Maria Rodriguez with sustainable materials and eco-conscious practices. Each piece is unique and tells a story of environmental responsibility.",
+    "price": "132.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "Recycled silver, sustainable bamboo, natural hemp cord",
+    "dimensions": "18\" necklace length",
+    "image": "products/CLED-Jewelry-14_adf90e29-5a0a-45ed-bbd7-3e871fb935da.webp",
+    "location": "Austin, Texas",
+    "owner": 3,
+    "created_at": "2025-07-19T22:41:37.285Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 51,
+  "fields": {
+    "title": "Recycled Recycled Metal Elephant Head Sculpture",
+    "description": "Stunning recycled recycled metal elephant head sculpture created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "265.00",
+    "category": "recycled_sculptures",
+    "art_style": "sculptural",
+    "materials": "Recycled automotive parts, scrap metal, brass fittings",
+    "dimensions": "24\" x 18\" x 12\"",
+    "image": "products/recycled-metal-elephant-head-sculpture.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.300Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 52,
+  "fields": {
+    "title": "Recycled Recycled Metal Owl Sculpture",
+    "description": "Stunning recycled recycled metal owl sculpture created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "793.00",
+    "category": "recycled_sculptures",
+    "art_style": "sculptural",
+    "materials": "Recycled automotive parts, scrap metal, brass fittings",
+    "dimensions": "16\" x 12\" x 8\"",
+    "image": "products/recycled-metal-owl-sculpture.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.313Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 53,
+  "fields": {
+    "title": "Recycled Recycled Metal Scorpion Garden Sculpture",
+    "description": "Stunning recycled recycled metal scorpion garden sculpture created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "307.00",
+    "category": "recycled_sculptures",
+    "art_style": "sculptural",
+    "materials": "Recycled automotive parts, scrap metal, brass fittings",
+    "dimensions": "Variable installation size",
+    "image": "products/recycled-metal-scorpion-garden-sculpture.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.324Z",
+    "artist_statement": "Created with environmental consciousness, this piece tells a story of renewal and responsible creativity.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 54,
+  "fields": {
+    "title": "Recycled Recycled Metal Sculpture 01",
+    "description": "Stunning recycled recycled metal sculpture 01 created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "327.00",
+    "category": "recycled_sculptures",
+    "art_style": "steampunk",
+    "materials": "Recycled automotive parts, scrap metal, brass fittings",
+    "dimensions": "16\" x 12\" x 8\"",
+    "image": "products/recycled-metal-sculpture-01.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.337Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 55,
+  "fields": {
+    "title": "Recycled Recycled Metal Sculpture 02",
+    "description": "Stunning recycled recycled metal sculpture 02 created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "684.00",
+    "category": "recycled_sculptures",
+    "art_style": "sculptural",
+    "materials": "Recycled spark plugs, scrap metal, industrial materials",
+    "dimensions": "16\" x 12\" x 8\"",
+    "image": "products/recycled-metal-sculpture-02.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.349Z",
+    "artist_statement": "Celebrating the circular economy, this artwork gives new purpose to materials that would otherwise be discarded.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 56,
+  "fields": {
+    "title": "Recycled Recycled Objects Sculpture Brian Mock",
+    "description": "Stunning recycled recycled objects sculpture brian mock created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "505.00",
+    "category": "recycled_sculptures",
+    "art_style": "steampunk",
+    "materials": "Found objects, recycled materials, sustainable adhesives",
+    "dimensions": "24\" x 18\" x 12\"",
+    "image": "products/recycled-objects-sculpture-brian-mock.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.361Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 57,
+  "fields": {
+    "title": "Recycled Recycled Spark Plug Sheep Sculpture",
+    "description": "Stunning recycled recycled spark plug sheep sculpture created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "584.00",
+    "category": "recycled_sculptures",
+    "art_style": "steampunk",
+    "materials": "Recycled spark plugs, scrap metal, industrial materials",
+    "dimensions": "Variable installation size",
+    "image": "products/recycled-spark-plug-sheep-sculpture.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.372Z",
+    "artist_statement": "Giving new life to discarded materials, this artwork celebrates the beauty of sustainable practices.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 58,
+  "fields": {
+    "title": "Recycled Steampunk Angler Fish Metal Sculpture",
+    "description": "Stunning recycled steampunk angler fish metal sculpture created by Sarah Greenwood entirely from recycled materials. This piece transforms waste into wonder, showcasing the beauty of sustainable art.",
+    "price": "643.00",
+    "category": "recycled_sculptures",
+    "art_style": "steampunk",
+    "materials": "Recycled spark plugs, scrap metal, industrial materials",
+    "dimensions": "24\" x 18\" x 12\"",
+    "image": "products/steampunk-angler-fish-metal-sculpture.webp",
+    "location": "Portland, Oregon",
+    "owner": 2,
+    "created_at": "2025-07-19T22:41:37.384Z",
+    "artist_statement": "Transforming waste into wonder, this creation challenges our perception of beauty and sustainability.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 59,
+  "fields": {
+    "title": "Educational Earth Day Eco Art Celebration",
+    "description": "Educational educational earth day eco art celebration by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "466.00",
+    "category": "showcase_educational",
+    "art_style": "contemporary",
+    "materials": "Educational displays, sustainable packaging, natural materials",
+    "dimensions": "Variable installation size",
+    "image": "products/earth-day-eco-art-celebration.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.399Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 5
+  }
+},
+{
+  "model": "market.product",
+  "pk": 60,
+  "fields": {
+    "title": "Educational Eco Friendly Art Transport Guide",
+    "description": "Educational educational eco friendly art transport guide by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "754.00",
+    "category": "showcase_educational",
+    "art_style": "mixed_media",
+    "materials": "Showcase materials, sustainable practices, educational content",
+    "dimensions": "Variable installation size",
+    "image": "products/eco-friendly-art-transport-guide.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.408Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 61,
+  "fields": {
+    "title": "Educational Sustainable Art Information Guide",
+    "description": "Educational educational sustainable art information guide by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "801.00",
+    "category": "showcase_educational",
+    "art_style": "mixed_media",
+    "materials": "Recycled materials, natural fibers, sustainable adhesives",
+    "dimensions": "Variable installation size",
+    "image": "products/sustainable-art-information-guide.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.423Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 62,
+  "fields": {
+    "title": "Educational Sustainable Art Showcase 01",
+    "description": "Educational educational sustainable art showcase 01 by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "776.00",
+    "category": "showcase_educational",
+    "art_style": "mixed_media",
+    "materials": "Mixed media, educational components, sustainable materials",
+    "dimensions": "Variable installation size",
+    "image": "products/sustainable-art-showcase-01.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.437Z",
+    "artist_statement": "Using traditional techniques with modern sustainable practices, this piece honors both craftsmanship and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 63,
+  "fields": {
+    "title": "Educational Sustainable Art Showcase 02",
+    "description": "Educational educational sustainable art showcase 02 by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "633.00",
+    "category": "showcase_educational",
+    "art_style": "contemporary",
+    "materials": "Recycled materials, natural fibers, sustainable adhesives",
+    "dimensions": "Custom dimensions",
+    "image": "products/sustainable-art-showcase-02.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.452Z",
+    "artist_statement": "This piece explores the relationship between human creativity and environmental responsibility.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 64,
+  "fields": {
+    "title": "Educational Sustainable Art Showcase 03",
+    "description": "Educational educational sustainable art showcase 03 by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "593.00",
+    "category": "showcase_educational",
+    "art_style": "mixed_media",
+    "materials": "Recycled materials, natural fibers, sustainable adhesives",
+    "dimensions": "Custom dimensions",
+    "image": "products/sustainable-art-showcase-03.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.465Z",
+    "artist_statement": "This artwork demonstrates that beauty and sustainability can coexist, inspiring others to make eco-conscious choices.",
+    "sustainability_rating": 4
+  }
+},
+{
+  "model": "market.product",
+  "pk": 65,
+  "fields": {
+    "title": "Educational Sustainable Art Showcase 04",
+    "description": "Educational educational sustainable art showcase 04 by Sophie Williams designed to inspire and inform about sustainable art practices. Perfect for galleries and learning spaces.",
+    "price": "928.00",
+    "category": "showcase_educational",
+    "art_style": "contemporary",
+    "materials": "Mixed media, educational components, sustainable materials",
+    "dimensions": "Custom dimensions",
+    "image": "products/sustainable-art-showcase-04.webp",
+    "location": "Portland, Oregon",
+    "owner": 9,
+    "created_at": "2025-07-19T22:41:37.479Z",
+    "artist_statement": "Celebrating the circular economy, this artwork gives new purpose to materials that would otherwise be discarded.",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 66,
+  "fields": {
+    "title": "sfgsdf",
+    "description": "dfbsdbsdbsd",
+    "price": "344564.00",
+    "category": "home_decor",
+    "art_style": "realistic",
+    "materials": "",
+    "dimensions": null,
+    "image": "products/eco-art-display-mockup.webp",
+    "location": "dfbsdfbsdf",
+    "owner": 13,
+    "created_at": "2025-07-20T01:06:35.572Z",
+    "artist_statement": "xdbdsbdbs",
+    "sustainability_rating": 3
+  }
+},
+{
+  "model": "market.product",
+  "pk": 67,
+  "fields": {
+    "title": "dev6",
+    "description": "afasdfasdf\r\nasdf\r\nadf\r\nasdf\r\nasdf\r\nasdf\r\nasdf",
+    "price": "569094.00",
+    "category": "eco_jewelry",
+    "art_style": "wearable",
+    "materials": "adfasdfnoasdf\r\nasdf\r\nasdf\r\nasdf\r\nasdf",
+    "dimensions": "456",
+    "image": "products/5818651.jpg",
+    "location": "Windsor, ON, CAN",
+    "owner": 14,
+    "created_at": "2025-07-20T02:08:56.414Z",
+    "artist_statement": "asfasdfadf\r\nasdf\r\nasdf\r\nasdf\r\nasdf",
+    "sustainability_rating": 3
+  }
+}
+]

@@ -1,0 +1,101 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0">
+                        <i class="fas fa-shipping-fast me-2"></i>
+                        Update Shipping Address - Order #{{ order.order_number }}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Note:</strong> You can only update the shipping address for orders that are still pending or processing.
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <strong>Order Status:</strong> 
+                            <span class="badge bg-{{ order.status|lower }} ms-2">{{ order.get_status_display }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Order Total:</strong> ${{ order.total }}
+                        </div>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <h5 class="mb-3">New Shipping Address</h5>
+                        
+                        <div class="mb-3">
+                            <label for="id_shipping_address" class="form-label">
+                                <i class="fas fa-map-marker-alt me-2"></i>Street Address
+                            </label>
+                            {{ form.shipping_address }}
+                            {% if form.shipping_address.errors %}
+                                <div class="text-danger small mt-1">{{ form.shipping_address.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_shipping_city" class="form-label">City</label>
+                                    {{ form.shipping_city }}
+                                    {% if form.shipping_city.errors %}
+                                        <div class="text-danger small mt-1">{{ form.shipping_city.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_shipping_state" class="form-label">State/Province</label>
+                                    {{ form.shipping_state }}
+                                    {% if form.shipping_state.errors %}
+                                        <div class="text-danger small mt-1">{{ form.shipping_state.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_shipping_zip_code" class="form-label">ZIP/Postal Code</label>
+                                    {{ form.shipping_zip_code }}
+                                    {% if form.shipping_zip_code.errors %}
+                                        <div class="text-danger small mt-1">{{ form.shipping_zip_code.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_shipping_country" class="form-label">Country</label>
+                                    {{ form.shipping_country }}
+                                    {% if form.shipping_country.errors %}
+                                        <div class="text-danger small mt-1">{{ form.shipping_country.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fas fa-save me-2"></i>Update Address
+                            </button>
+                            <a href="{% url 'order_detail' order.id %}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Back to Order
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -575,12 +575,29 @@
                         <li><a href="{% url 'home' %}" class="text-decoration-none">Home</a></li>
                         <li><a href="{% url 'about' %}" class="text-decoration-none">About</a></li>
                         <li><a href="{% url 'contact' %}" class="text-decoration-none">Contact</a></li>
+                        <li><a href="{% url 'user_feedback' %}" class="text-decoration-none">Feedback</a></li>
                         <li><a href="{% url 'team' %}" class="text-decoration-none">Team</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="mb-3">Connect With Us</h5>
-                    <div class="d-flex gap-3">
+                    <h5 class="mb-3">Newsletter</h5>
+                    <p class="text-muted small">Stay updated with eco-art trends and new arrivals</p>
+                    <form id="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        {% csrf_token %}
+                        <div class="input-group mb-2">
+                            <input type="email" class="form-control" name="email" placeholder="Your email" required>
+                            <button class="btn btn-success" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="d-flex gap-2 mb-2">
+                            <input type="radio" name="frequency" value="weekly" id="weekly" checked>
+                            <label for="weekly" class="form-check-label small">Weekly</label>
+                            <input type="radio" name="frequency" value="monthly" id="monthly">
+                            <label for="monthly" class="form-check-label small">Monthly</label>
+                        </div>
+                    </form>
+                    <div class="d-flex gap-3 mt-3">
                         <a href="#" class="text-muted"><i class="fab fa-facebook fa-lg"></i></a>
                         <a href="#" class="text-muted"><i class="fab fa-twitter fa-lg"></i></a>
                         <a href="#" class="text-muted"><i class="fab fa-instagram fa-lg"></i></a>
@@ -720,6 +737,34 @@
             }
         `;
         document.head.appendChild(style);
+        
+        // Newsletter subscription
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            fetch('{% url "newsletter_subscribe" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    form.reset();
+                    alert('Thank you for subscribing to our newsletter!');
+                } else {
+                    alert('There was an error with your subscription. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error with your subscription. Please try again.');
+            });
+        }
     </script>
     {% block extra_js %}{% endblock %}
 </body>

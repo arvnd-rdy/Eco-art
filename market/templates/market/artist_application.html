@@ -1,0 +1,103 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-success text-white text-center py-4">
+                    <h2 class="mb-0"><i class="fas fa-certificate me-2"></i>Artist Application</h2>
+                    <p class="mb-0">Apply to become a verified eco-artist on our platform</p>
+                </div>
+                <div class="card-body p-5">
+                    <div class="alert alert-info">
+                        <h6><i class="fas fa-info-circle me-2"></i>Application Process</h6>
+                        <p class="mb-0">We review all applications within 5-7 business days. Verified artists get special badges and increased visibility on our platform.</p>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="id_full_name" class="form-label">
+                                <i class="fas fa-user me-2"></i>Full Name
+                            </label>
+                            {{ form.full_name }}
+                            {% if form.full_name.errors %}
+                                <div class="text-danger small mt-1">{{ form.full_name.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_artist_statement" class="form-label">
+                                <i class="fas fa-quote-left me-2"></i>Artist Statement
+                            </label>
+                            {{ form.artist_statement }}
+                            <small class="form-text text-muted">Tell us about your artistic journey and eco-friendly practices</small>
+                            {% if form.artist_statement.errors %}
+                                <div class="text-danger small mt-1">{{ form.artist_statement.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_portfolio_url" class="form-label">
+                                <i class="fas fa-link me-2"></i>Portfolio URL (Optional)
+                            </label>
+                            {{ form.portfolio_url }}
+                            {% if form.portfolio_url.errors %}
+                                <div class="text-danger small mt-1">{{ form.portfolio_url.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_years_of_experience" class="form-label">
+                                        <i class="fas fa-calendar-alt me-2"></i>Years of Experience
+                                    </label>
+                                    {{ form.years_of_experience }}
+                                    {% if form.years_of_experience.errors %}
+                                        <div class="text-danger small mt-1">{{ form.years_of_experience.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="id_specialization" class="form-label">
+                                        <i class="fas fa-palette me-2"></i>Primary Specialization
+                                    </label>
+                                    {{ form.specialization }}
+                                    {% if form.specialization.errors %}
+                                        <div class="text-danger small mt-1">{{ form.specialization.errors.0 }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="id_certifications" class="form-label">
+                                <i class="fas fa-award me-2"></i>Certifications & Awards (Optional)
+                            </label>
+                            {{ form.certifications }}
+                            <small class="form-text text-muted">List any relevant certifications, awards, or recognition</small>
+                            {% if form.certifications.errors %}
+                                <div class="text-danger small mt-1">{{ form.certifications.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Application
+                            </button>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <a href="{% url 'profile' %}" class="text-muted">Back to Profile</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

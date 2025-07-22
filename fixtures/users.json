@@ -1,0 +1,254 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qrcWY0LYJdWQRb2vsrqat7$9Fb88GpYG/K1MsiYdePal7lghldzdb3OmlxwxAW1iV0=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "dev",
+    "first_name": "",
+    "last_name": "",
+    "email": "dev@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:01:39.379Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$MgXBssCXBlQLYopuKzHc1m$OlmaIEw2X8yWU/7aI8kuB3Rp+4Z6EKWV1AohLIlRD4M=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sarah_greenwood",
+    "first_name": "Sarah",
+    "last_name": "Greenwood",
+    "email": "sarah@greenwoodmetal.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:46.198Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$aXnXUbb30IuoSuqg9ojfRw$qmz8DWrrMu5HMW8AaJEKa5vwLLMxU0KJjWQthn5FKpE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "maria_rodriguez",
+    "first_name": "Maria",
+    "last_name": "Rodriguez",
+    "email": "maria@sustainablecrafts.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:46.930Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$sdMGMjtKmcIJ5gzJJ5EXS7$2dSdDN3muJLcrJ4xRcd8B0xfdEcfVIckPYO4nbWYofg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "david_chen",
+    "first_name": "David",
+    "last_name": "Chen",
+    "email": "david@earthartstudio.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:47.652Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$zf8e4zMT8kcl7L9EiUeAt8$FYPLxWQKkQCOhIvv/phbGVP6y9M1fCiz40TldfGejTY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "emma_thompson",
+    "first_name": "Emma",
+    "last_name": "Thompson",
+    "email": "emma@greencreations.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:48.329Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$bINv1oJ5aMirTYWRS7AbcD$06ye5mPT6YnQFJBGExscNngg6XKFInHmPzFnxXAA2xc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alex_rivera",
+    "first_name": "Alex",
+    "last_name": "Rivera",
+    "email": "alex@naturalpaints.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:49.033Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$OD46DHdA4dQTOFrEaIHzdk$3AaIIHoMaFhwWfpt/VCte+n0+dPJyWExKjJAqnLkeZA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "lisa_park",
+    "first_name": "Lisa",
+    "last_name": "Park",
+    "email": "lisa@claycreations.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:49.759Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$BkzyZN0eM7A9lQq9G9UcBy$ZZPMW4bkQSV4y30DU4Ca9SjQwkLu1p5/RKnX/2kDfFQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "marcus_johnson",
+    "first_name": "Marcus",
+    "last_name": "Johnson",
+    "email": "marcus@reclaimedwood.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:50.444Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$DNywiyL8YWjrzBdRvSKiQN$Rz78RHgmkPYrlMZ3cEtQo/YXEe8mbHzRzc1mKQ6ieBY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sophie_williams",
+    "first_name": "Sophie",
+    "last_name": "Williams",
+    "email": "sophie@digitalecoart.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:51.133Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$jZVrsWrCzXKKomlTS0q1mz$pAaEe/KgTHDzxqfR17FNDCkt3zlLQ5uFMoQho/Ot7gk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "carlos_mendez",
+    "first_name": "Carlos",
+    "last_name": "Mendez",
+    "email": "carlos@folkartstudio.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:51.824Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5I6e5E2plyErj8EJ3nnDUp$wEVXwfmh3a+KeKV1aAFActofdjxkg2xV6kxZNFGTnB0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "aisha_patel",
+    "first_name": "Aisha",
+    "last_name": "Patel",
+    "email": "aisha@zerowasteart.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:39:52.484Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$wnkLsep0Lj7GDftZ9IXE54$czWfGF8hE6T6gfZJvMWvpbQf431/JEtHW9IUOcL/wfQ=",
+    "last_login": "2025-07-22T01:44:33.052Z",
+    "is_superuser": false,
+    "username": "dev2",
+    "first_name": "",
+    "last_name": "",
+    "email": "dev@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:43:11.531Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$GKJraJb2RkTO502VHMVTPb$u5Rl3utqI9/Jm3LUy+xjpZzdqM6pI+v+6CWVa5ZFZy4=",
+    "last_login": "2025-07-19T22:45:04.758Z",
+    "is_superuser": false,
+    "username": "dev3",
+    "first_name": "",
+    "last_name": "",
+    "email": "dev@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-19T22:45:03.993Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$71XtzC8AYGnTA2wwVAhcWt$UjZ7AjNzypvA0NEZZ1syyjgXJdTuV7N+wSGsNzEyTyQ=",
+    "last_login": "2025-07-20T02:07:58.943Z",
+    "is_superuser": false,
+    "username": "dev6",
+    "first_name": "",
+    "last_name": "",
+    "email": "dev3@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-07-20T02:07:57.627Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

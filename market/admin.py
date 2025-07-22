@@ -1,7 +1,49 @@
 from django.contrib import admin
-from .models import Product, ContactMessage, Profile, Review, Order, OrderItem, Notification, Wishlist
+from .models import Product, ContactMessage, Profile, Review, Order, OrderItem, Notification, Wishlist, Category, ArtStyle
 
 # Register your models here.
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['display_name', 'name', 'is_active', 'created_at']
+    list_filter = ['is_active', 'created_at']
+    search_fields = ['name', 'display_name', 'description']
+    date_hierarchy = 'created_at'
+    readonly_fields = ['created_at']
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('name', 'display_name', 'description')
+        }),
+        ('Display Options', {
+            'fields': ('icon', 'is_active')
+        }),
+        ('Timestamps', {
+            'fields': ('created_at',),
+            'classes': ('collapse',)
+        }),
+    )
+
+@admin.register(ArtStyle)
+class ArtStyleAdmin(admin.ModelAdmin):
+    list_display = ['display_name', 'name', 'is_active', 'created_at']
+    list_filter = ['is_active', 'created_at']
+    search_fields = ['name', 'display_name', 'description']
+    date_hierarchy = 'created_at'
+    readonly_fields = ['created_at']
+    
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('name', 'display_name', 'description')
+        }),
+        ('Status', {
+            'fields': ('is_active',)
+        }),
+        ('Timestamps', {
+            'fields': ('created_at',),
+            'classes': ('collapse',)
+        }),
+    )
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
