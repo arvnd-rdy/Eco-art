@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import SignUpView, IndexView, ProductListView, ProductUploadView, ProductDetailView, ContactSellerView, ProfileView, AboutView, ContactView, TeamView, ProductDeleteView, SellerProfileView, HomeView, MarketplaceView, add_to_cart, remove_from_cart, CartView, ReviewView, DeleteReviewView, CheckoutView, OrderConfirmationView, OrderHistoryView, OrderDetailView, NotificationsView, MarkNotificationReadView, WishlistView, add_to_wishlist, remove_from_wishlist, move_to_cart, LogoutView, UserFeedbackView, ArtistApplicationView, NewsletterSubscriptionView, ShippingUpdateView
+from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
+from django.views.generic import TemplateView
+from .views import SignUpView, IndexView, ProductListView, ProductUploadView, ProductDetailView, ContactSellerView, ProfileView, AboutView, ContactView, TeamView, ProductDeleteView, SellerProfileView, HomeView, MarketplaceView, add_to_cart, remove_from_cart, CartView, ReviewView, DeleteReviewView, CheckoutView, OrderConfirmationView, OrderHistoryView, OrderDetailView, NotificationsView, MarkNotificationReadView, WishlistView, add_to_wishlist, remove_from_wishlist, move_to_cart, LogoutView, UserFeedbackView, ArtistApplicationView, NewsletterSubscriptionView, ShippingUpdateView, CustomPasswordResetView, ChangePasswordView, CustomLoginView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
@@ -20,6 +22,11 @@ urlpatterns = [
     path('move-to-cart/<int:pk>/', move_to_cart, name='move_to_cart'),
     path('signup/', SignUpView.as_view(), name='signup'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('password-reset/', CustomPasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/done/', TemplateView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('reset/done/', PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
     path('upload/', ProductUploadView.as_view(), name='upload'),
     path('product/<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
     path('product/<int:pk>/delete/', ProductDeleteView.as_view(), name='product_delete'),
@@ -27,6 +34,7 @@ urlpatterns = [
     path('product/<int:pk>/review/', ReviewView.as_view(), name='add_review'),
     path('product/<int:pk>/review/delete/', DeleteReviewView.as_view(), name='delete_review'),
     path('profile/', ProfileView.as_view(), name='profile'),
+    path('profile/change-password/', ChangePasswordView.as_view(), name='change_password'),
     path('about/', AboutView.as_view(), name='about'),
     path('contact/', ContactView.as_view(), name='contact'),
     path('team/', TeamView.as_view(), name='team'),

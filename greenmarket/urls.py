@@ -22,7 +22,7 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),  # Commented out to use custom views
     path('accounts/profile/', RedirectView.as_view(url='/profile/', permanent=False), name='profile_redirect'),
     path('', include('market.urls')),
 ]
