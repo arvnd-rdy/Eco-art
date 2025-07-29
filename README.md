@@ -5,7 +5,14 @@ A web platform where artists can showcase and sell eco-friendly artwork created 
 ## Features
 
 ### Core Features
-- **User Authentication**: Register, login, logout with secure user management
+- **Advanced User Authentication**: Complete authentication system with enhanced security
+  - ✅ **Secure Login/Logout**: Custom login view with proper error handling
+  - ✅ **User Registration**: Signup with email verification
+  - ✅ **Password Reset**: Real email sending with Gmail SMTP integration
+  - ✅ **Change Password**: In-profile password change functionality
+  - ✅ **Email Validation**: Checks if user exists before sending reset emails
+  - ✅ **Session Management**: Prevents logout after password changes
+  - ✅ **Error Handling**: Clear error messages for invalid credentials
 - **Artwork Listings**: Detailed product pages with comprehensive art information
 - **Art Categories**: Specialized categories for different types of eco-art (jewelry, sculptures, wall art, etc.)
 - **Art Style Classification**: Abstract, realistic, contemporary, traditional, and more
@@ -13,6 +20,16 @@ A web platform where artists can showcase and sell eco-friendly artwork created 
 - **Sustainability Ratings**: 1-5 scale rating system for eco-friendliness
 - **Artist Statements**: Personal stories behind each artwork
 - **Dimensions & Specifications**: Detailed artwork measurements and details
+
+### Data Management & Fixtures
+- **Pre-loaded Sample Data**: Comprehensive fixtures for consistent demos
+  - ✅ **User Fixtures**: 14 sample users with different roles (artists, buyers, admin)
+  - ✅ **Product Fixtures**: 50+ eco-friendly artwork samples
+  - ✅ **Review Fixtures**: Realistic reviews and ratings
+  - ✅ **Profile Fixtures**: Complete artist profiles with bios and locations
+  - ✅ **Quick Setup**: `python manage.py loaddata fixtures/*.json`
+  - ✅ **Consistent Testing**: Same data across all team members
+  - ✅ **Demo Ready**: Instantly populated with meaningful data
 
 ### Interactive Features
 - **Search & Filter**: Find artwork by category, location, and keywords
@@ -83,7 +100,15 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-5. (Optional) Populate with sample data:
+5. Load sample data (Fixtures):
+```bash
+python manage.py loaddata fixtures/users.json
+python manage.py loaddata fixtures/profiles.json
+python manage.py loaddata fixtures/products.json
+python manage.py loaddata fixtures/reviews.json
+```
+
+6. (Optional) Create additional sample data:
 ```bash
 python manage.py create_eco_artists
 python manage.py populate_eco_art
@@ -91,17 +116,57 @@ python manage.py add_sample_reviews
 python manage.py add_sample_notifications
 ```
 
-6. Run the development server:
+7. Run the development server:
 ```bash
 python manage.py runserver
 ```
+
+## Authentication Features
+
+### Login System
+- **Custom Login View**: Enhanced error handling and user feedback
+- **Error Messages**: Clear validation for invalid credentials
+- **Success Messages**: Welcome back notifications
+- **Form Validation**: Proper field validation and error display
+
+### Password Management
+- **Password Reset**: Real email sending with Gmail SMTP
+- **Email Validation**: Checks user existence before sending emails
+- **Secure Tokens**: Django's built-in secure token system
+- **Change Password**: In-profile password change functionality
+- **Session Preservation**: Maintains login after password changes
+
+### User Profiles
+- **Extended Profiles**: Bio, location, phone, social links
+- **Profile Management**: Edit profile information
+- **Role-based Features**: Different views for buyers/sellers
+- **Profile Pictures**: Upload and manage profile images
+
+## Email Configuration
+
+The project uses Gmail SMTP for sending password reset emails:
+
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'your-email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your-app-password'
+```
+
+**Setup Instructions:**
+1. Enable 2-factor authentication on your Gmail account
+2. Generate an App Password for Django
+3. Update the email settings in `greenmarket/settings.py`
 
 ## Tech Stack
 
 - **Backend**: Django 4.x with class-based views
 - **Frontend**: Django Templates + Bootstrap 5
 - **Database**: SQLite (easily configurable for production)
-- **Authentication**: Django's built-in auth system
+- **Authentication**: Custom Django auth system with enhanced features
+- **Email**: Gmail SMTP for password reset functionality
 - **File Storage**: Django's MEDIA_ROOT for artwork images
 - **Forms**: Django Forms with custom validation
 - **Admin Interface**: Customized Django admin for easy management
@@ -109,15 +174,20 @@ python manage.py runserver
 ## Project Structure
 
 ```
-Django_final_project/
+Eco-art/
 ├── market/                 # Main app
 │   ├── models.py          # Product, Review, Order, OrderItem, Profile, ContactMessage, Notification models
-│   ├── views.py           # Class-based views for all functionality
+│   ├── views.py           # Class-based views including custom auth views
 │   ├── forms.py           # Forms for products, reviews, orders, profiles
 │   ├── admin.py           # Customized admin interface
-│   ├── urls.py            # URL routing
+│   ├── urls.py            # URL routing with custom auth URLs
 │   └── templates/         # HTML templates
 ├── greenmarket/           # Project settings
+├── fixtures/              # Sample data fixtures
+│   ├── users.json         # Sample users
+│   ├── profiles.json      # User profiles
+│   ├── products.json      # Sample products
+│   └── reviews.json       # Sample reviews
 ├── media/                 # Uploaded images
 ├── static/                # Static files
 └── manage.py             # Django management script
@@ -132,6 +202,29 @@ Django_final_project/
 - **Notification**: User notifications for various activities and system events
 - **Profile**: Extended user profiles with artist information
 - **ContactMessage**: Communication between buyers and artists
+- **User**: Django's built-in user model with custom authentication
+
+## Authentication Flow
+
+1. **Registration**: Users sign up with username, email, and password
+2. **Login**: Secure login with error handling and validation
+3. **Password Reset**: Email-based password reset with validation
+4. **Profile Management**: Edit profile information and change password
+5. **Logout**: Secure logout with session cleanup
+
+## Fixtures & Sample Data
+
+The project includes comprehensive fixtures for easy setup and consistent demos:
+
+- **14 Sample Users**: Including admin, artists, and buyers
+- **50+ Products**: Eco-friendly artwork samples
+- **Realistic Reviews**: Pre-populated reviews and ratings
+- **Complete Profiles**: Artist profiles with bios and locations
+
+**Quick Setup:**
+```bash
+python manage.py loaddata fixtures/*.json
+```
 
 ## Order Flow
 
@@ -178,4 +271,8 @@ Django_final_project/
 - Push notifications for mobile
 - Notification preferences and settings
 - Real-time chat system
-- Social media integration 
+- Social media integration
+- Two-factor authentication
+- Email verification for new accounts
+- Password strength requirements
+- Account lockout after failed attempts 

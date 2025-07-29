@@ -129,3 +129,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+
+# Email Configuration for Development
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'ecoartgreenmarket@gmail.com'
+EMAIL_HOST_PASSWORD = 'mjibrjrucmyxiaul'
+DEFAULT_FROM_EMAIL = 'ecoartgreenmarket@gmail.com'
+EMAIL_TIMEOUT = 10

@@ -14,6 +14,11 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from decimal import Decimal
+from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 
@@ -894,3 +899,60 @@ class LogoutView(View):
         logout(request)
         messages.success(request, 'You have been successfully logged out!')
         return redirect('home')
+
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'registration/password_reset_form.html'
+    email_template_name = 'registration/password_reset_email.html'
+    subject_template_name = 'registration/password_reset_subject.txt'
+    success_url = '/password-reset/done/'
+    
+    def form_valid(self, form):
+        email = form.cleaned_data['email']
+        # Check if user with this email exists
+        if not User.objects.filter(email=email).exists():
+            messages.error(self.request, f'No user found with email address: {email}')
+            return self.form_invalid(form)
+        
+        try:
+            # If user exists, proceed with password reset
+            response = super().form_valid(form)
+            messages.success(self.request, f'Password reset email sent to: {email}')
+            return response
+        except Exception as e:
+            print(f"Email sending error: {str(e)}")  # Debug print
+            messages.error(self.request, f'Error sending email: {str(e)}')
+            return self.form_invalid(form)
+
+class CustomLoginView(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return redirect('home')
+        form = AuthenticationForm()
+        return render(request, 'registration/login.html', {'form': form})
+    
+    def post(self, request):
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            messages.success(request, f'Welcome back, {user.username}!')
+            next_url = request.GET.get('next', 'home')
+            return redirect(next_url)
+        else:
+            messages.error(request, 'Invalid username or password. Please try again.')
+            return render(request, 'registration/login.html', {'form': form})
+
+class ChangePasswordView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = PasswordChangeForm(request.user)
+        return render(request, 'market/change_password.html', {'form': form})
+    
+    def post(self, request):
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Update session to prevent logout
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password has been successfully changed!')
+            return redirect('profile')
+        return render(request, 'market/change_password.html', {'form': form})
